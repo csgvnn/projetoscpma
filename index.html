@@ -327,17 +327,20 @@ function prazoBadge(prazo){
 
 function cronograma5Ciclo(){
   const marcos=[
-    {mes:'Mar',desc:'Início da coleta de dados do 1º quad. 2026',cor:'#00843D'},
-    {mes:'Abr',desc:'Consolidação das informações pelos setoriais',cor:'#00843D'},
-    {mes:'Mai',desc:'Análise e validação dos dados pela SCPMA',cor:'#005DAA'},
-    {mes:'Jun',desc:'Revisão e ajustes finais com as secretarias',cor:'#005DAA'},
-    {mes:'Jul',desc:'Produção do relatório e e-book do 5º Ciclo',cor:'#606770'},
-    {mes:'Ago',desc:'Publicação e divulgação do 5º Ciclo',cor:'#606770'},
+    {status:'Concluído',desc:'Reunião Interna Facilitadores Abertura do Ciclo de Atualização',cor:'#00843D'},
+    {status:'Concluído',desc:'Atualização de dados (dados 1º quadrimestre de 2026)',cor:'#00843D'},
+    {status:'Concluído',desc:'Reunião Geral com as Pastas - Orientações Ciclo',cor:'#00843D'},
+    {status:'Concluído',desc:'Acompanhamento com as pastas',cor:'#00843D'},
+    {status:'Atrasado',desc:'Consolidação do conteúdo por Eixos',cor:'#E4002B'},
+    {status:'Atrasado',desc:'Diagramação/Layout (Conteúdo Consolidado)',cor:'#E4002B'},
+    {status:'Risco',desc:'Validação do Ebook (Conteúdo Consolidado)',cor:'#B3001E'},
+    {status:'A Fazer',desc:'Apresentação do Ebook (Conteúdo Consolidado) ao Secretário Economia',cor:'#606770'},
+    {status:'A Fazer',desc:'Envio Relatório Final aos demais Secretários/Dirigentes',cor:'#606770'}
   ];
   return `<div class="cronograma-list">${marcos.map(m=>`
-    <div class="crono-item">
+    <div class="crono-item" style="margin-bottom:4px;">
       <div class="crono-dot" style="background:${m.cor}"></div>
-      <span class="crono-mes">${m.mes}</span>
+      <span class="crono-mes" style="color:${m.cor};min-width:70px;">${m.status}</span>
       <span>${m.desc}</span>
     </div>`).join('')}</div>`;
 }
@@ -418,7 +421,7 @@ const projects=[
       {text:'Criação do E-book · 4º Ciclo',btns:[makeLinkBtn({title:'E-book · 4º Ciclo de Entregas',tag:'E-book',tagColor:'#005C2B',tagBg:'#E8F5EE',url:'https://online.fliphtml5.com/kwdyd/wmdb/#p=1'})]},
       {text:'Sistema de Cadastro GECEG',btns:[makeLinkBtn({title:'Cadastro GECEG',tag:'Sistema',tagColor:'#003E73',tagBg:'#E0ECF8',url:'https://apex.sefaz.go.gov.br/ords/r/rap/rap255/login?session=1266880393861'})]}
     ],
-    doing:[{text:'Atualização dos dados para o 5º Ciclo · 1º quadrimestre de 2026',crono:true,btns:[]}],
+    doing:[{text:'5º Ciclo',crono:true,btns:[]}],
     todo:[
       {text:'6º Ciclo',btns:[]},
       {text:'Estudo de viabilidade para aproveitamento na prestação de contas dos gestores',btns:[]}
