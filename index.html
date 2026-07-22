@@ -141,18 +141,18 @@ body.sidebar-hidden .main{margin-left:0!important;}
 .pn-btn{padding:8px 16px;border-radius:99px;border:1px solid var(--line);background:#fff;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:800;letter-spacing:0.04em;cursor:pointer;transition:all 0.2s;color:var(--muted);}
 .pn-btn:hover:not(:disabled){border-color:var(--g-green);color:var(--g-green);}
 .pn-btn:disabled{opacity:0.3;cursor:not-allowed;}
-.proj-hero-section{display:grid;grid-template-columns:1fr 400px;min-height:340px;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--ph1,var(--g-green-d)),var(--ph2,var(--g-green)));}
-.proj-hero-content{padding:50px 56px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;background:transparent;}
+.proj-hero-section{display:grid;grid-template-columns:1fr 400px;min-height:340px;position:relative;overflow:hidden;}
+.proj-hero-content{background:linear-gradient(135deg,var(--ph1,var(--g-green-d)),var(--ph2,var(--g-green)));padding:50px 56px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
 .proj-hero-content::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
 .proj-hero-content .inner{position:relative;z-index:1;}
 .proj-num-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:10px;}
 .proj-big-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(24px,3vw,44px);font-weight:900;color:#fff;letter-spacing:-0.01em;text-transform:uppercase;line-height:1.05;margin-bottom:14px;}
 .proj-objective{font-size:14px;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:22px;max-width:520px;}
 .proj-tags{display:flex;gap:8px;flex-wrap:wrap;}
-.proj-hero-visual{position:relative;overflow:hidden;background:transparent;}
-.proj-hero-visual img{width:100%;height:100%;object-fit:cover;opacity:0.65;transition:transform 0.6s ease; -webkit-mask-image:linear-gradient(to right, transparent 0px, black 80px); mask-image:linear-gradient(to right, transparent 0px, black 80px);}
+.proj-hero-visual{position:relative;overflow:hidden;background:var(--deep);}
+.proj-hero-visual img{width:100%;height:100%;object-fit:cover;opacity:0.65;transition:transform 0.6s ease;}
 .proj-hero-visual:hover img{transform:scale(1.04);}
-.proj-hero-visual-overlay{display:none;}
+.proj-hero-visual-overlay{position:absolute;inset:0;background:linear-gradient(90deg,var(--ph1,var(--g-green-d)) 0%,transparent 45%);}
 .proj-pct-badge{position:absolute;bottom:26px;right:26px;width:88px;height:88px;border-radius:50%;background:rgba(16,35,61,0.82);backdrop-filter:blur(10px);border:2px solid rgba(255,255,255,0.18);display:flex;flex-direction:column;align-items:center;justify-content:center;}
 .proj-pct-badge .pn{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;color:#fff;}
 .proj-pct-badge .pl{font-size:9px;color:rgba(255,255,255,0.45);font-weight:700;margin-top:1px;}
@@ -233,24 +233,9 @@ body.sidebar-hidden .main{margin-left:0!important;}
 .bar-tipo{font-size:9px;font-weight:800;padding:2px 7px;border-radius:99px;flex-shrink:0;}
 @keyframes pulse-anim{0%,100%{opacity:1;}50%{opacity:0.4;}}
 @media print{.sidebar,.topbar,.back-btn,.pn-btn{display:none!important;}.main{margin-left:0!important;}.slide{page-break-after:always;}}
-@media(max-width:900px){
-  :root{--sidebar-w:0px;}
-  .sidebar{display:none;}
-  .capa-inner,.proj-hero-section,.three-cols-pres,.ind-grid,.summary-strip,.dash-body{grid-template-columns:1fr!important;}
-  .proj-hero-section{flex-direction:column!important;min-height:auto!important;}
-  .proj-hero-content{width:100%!important;padding:30px 24px!important;}
-  .proj-hero-visual{position:relative!important;width:100%!important;height:220px!important;}
-  .proj-hero-visual-overlay{background:linear-gradient(180deg,var(--ph1,var(--g-green-d)) 0%,transparent 100%)!important;}
-}
+@media(max-width:900px){:root{--sidebar-w:0px;}.sidebar{display:none;}.capa-inner,.proj-hero-section,.three-cols-pres,.ind-grid,.summary-strip,.dash-body{grid-template-columns:1fr!important;}}
 .sb-title, .sb-btn, .tb-crumb .org, .tb-crumb .curr, .tb-btn, .capa-kicker, .capa-h1, .capa-num-item .n, .btn-primary-capa, .btn-sec-capa, .capa-img-caption .title, .float-num, .capa-footer-org, .slide-kicker, .slide-h1, .sum-card .big-n, .proj-row-num, .proj-row-name, .proj-row-pct .pnum, .back-btn, .pn-btn, .proj-num-label, .proj-big-title, .proj-pct-badge .pn, .meta-val, .section-label, .ind-num, .col-head-title, .crono-mes, .linkbtn, .pill, .selo, .dash-kpi .kn, .panel-title, .bar-name, .bar-pct-label {
   font-family: 'Poppins', sans-serif !important;
-}
-.proj-hero-visual img.img-atena {
-  object-fit: contain !important;
-  object-position: center bottom !important;
-  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%) !important;
-  mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%) !important;
-  opacity: 1 !important;
 }
 </style>
 </head>
@@ -856,8 +841,8 @@ function renderProject(id){
         <button class="pn-btn" ${next===null?'disabled':''} onclick="${next!==null?`openProject(${next})`:''}">Próximo →</button>
       </div>
     </div>
-    <div class="proj-hero-section" style="--ph1:${p.colorG};--ph2:${p.color}">
-      <div class="proj-hero-content">
+    <div class="proj-hero-section">
+      <div class="proj-hero-content" style="--ph1:${p.colorG};--ph2:${p.color}">
         <div class="inner">
           <div class="proj-num-label">Projeto ${String(id+1).padStart(2,'0')} · ${p.statusLabel}</div>
           <div class="proj-big-title">${p.name}</div>
@@ -866,8 +851,8 @@ function renderProject(id){
         </div>
       </div>
       <div class="proj-hero-visual">
-        <img src="${img}" alt="${p.name}" class="${p.id === 8 ? 'img-atena' : ''}" onerror="this.parentElement.style.background='linear-gradient(135deg,${p.colorG},${p.color})'"/>
-        <div class="proj-hero-visual-overlay"></div>
+        <img src="${img}" alt="${p.name}" onerror="this.parentElement.style.background='linear-gradient(135deg,${p.colorG},${p.color})'"/>
+        <div class="proj-hero-visual-overlay" style="background:linear-gradient(90deg,${p.colorG} 0%,transparent 50%)"></div>
         <div class="proj-pct-badge"><div class="pn">${p.progress}%</div><div class="pl">evolução</div></div>
       </div>
     </div>
