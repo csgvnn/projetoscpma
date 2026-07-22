@@ -345,6 +345,26 @@ function cronograma5Ciclo(){
     </div>`).join('')}</div>`;
 }
 
+function cronograma6Ciclo(){
+  const marcos=[
+    {status:'A Fazer',desc:'Reunião Interna Facilitadores Abertura do Ciclo de Atualização',cor:'#606770'},
+    {status:'A Fazer',desc:'Atualização de dados (dados 2º quadrimestre de 2026)',cor:'#606770'},
+    {status:'A Fazer',desc:'Reunião Geral com as Pastas - Orientações Ciclo',cor:'#606770'},
+    {status:'A Fazer',desc:'Acompanhamento com as pastas',cor:'#606770'},
+    {status:'A Fazer',desc:'Consolidação do conteúdo por Eixos',cor:'#606770'},
+    {status:'A Fazer',desc:'Diagramação/Layout (Conteúdo Consolidado)',cor:'#606770'},
+    {status:'A Fazer',desc:'Validação do Ebook (Conteúdo Consolidado)',cor:'#606770'},
+    {status:'A Fazer',desc:'Apresentação do Ebook (Conteúdo Consolidado) ao Secretário Economia',cor:'#606770'},
+    {status:'A Fazer',desc:'Envio Relatório Final aos demais Secretários/Dirigentes',cor:'#606770'}
+  ];
+  return `<div class="cronograma-list">${marcos.map(m=>`
+    <div class="crono-item" style="margin-bottom:4px;">
+      <div class="crono-dot" style="background:${m.cor}"></div>
+      <span class="crono-mes" style="color:${m.cor};min-width:70px;">${m.status}</span>
+      <span>${m.desc}</span>
+    </div>`).join('')}</div>`;
+}
+
 const projImages=[
   'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
   'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80',
@@ -423,7 +443,7 @@ const projects=[
     ],
     doing:[{text:'5º Ciclo',crono:true,btns:[]}],
     todo:[
-      {text:'6º Ciclo',btns:[]},
+      {text:'6º Ciclo',crono:6,btns:[]},
       {text:'Estudo de viabilidade para aproveitamento na prestação de contas dos gestores',btns:[]}
     ],
     indicators:[
@@ -731,7 +751,12 @@ function renderProject(id){
     return items.map(item=>{
       const btns=item.btns&&item.btns.length?`<div class="col-item-btns">${item.btns.join('')}</div>`:'';
       const itemPrazo=item.prazoItem?`<div style="margin-top:6px">${prazoBadge(item.prazoItem)}</div>`:'';
-      const crono=item.crono?cronograma5Ciclo():'';
+      let crono='';
+      if(item.crono===5 || item.crono==='5' || item.crono===true){
+        crono=cronograma5Ciclo();
+      } else if(item.crono===6 || item.crono==='6'){
+        crono=cronograma6Ciclo();
+      }
       return`<div class="col-item" style="--cib:${bg}">
         <div class="col-item-marker" style="background:${color}">${marker}</div>
         <div style="flex:1"><div class="col-item-text">${item.text}</div>${itemPrazo}${crono}${btns}</div>
