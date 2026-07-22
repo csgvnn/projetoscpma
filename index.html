@@ -88,7 +88,7 @@ body.sidebar-hidden .main{margin-left:0!important;}
 .btn-primary-capa:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(0,132,61,0.3);}
 .btn-sec-capa{padding:13px 26px;border-radius:99px;border:1px solid var(--line);background:var(--soft);color:var(--deep);font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;letter-spacing:0.04em;cursor:pointer;transition:all 0.2s;}
 .btn-sec-capa:hover{background:var(--line);border-color:var(--muted);}
-.capa-visual-area{width:100%;max-width:460px;position:relative;}
+.capa-visual-area{width:100%;max-width:580px;position:relative;}
 .capa-img-frame{width:100%;aspect-ratio:4/3;border-radius:22px;overflow:hidden;position:relative;border:1px solid var(--line);box-shadow:0 20px 40px rgba(0,0,0,0.06);}
 .capa-img-frame img{width:100%;height:100%;object-fit:cover;}
 .capa-img-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(16,35,61,0.85) 100%);}
@@ -116,19 +116,19 @@ body.sidebar-hidden .main{margin-left:0!important;}
 .sum-card .big-n{font-family:'Barlow Condensed',sans-serif;font-size:56px;font-weight:900;line-height:1;color:var(--sc,var(--g-green));margin-bottom:4px;}
 .sum-card .lbl{font-size:12px;font-weight:600;color:var(--muted);}
 .sum-card .icon-bg{position:absolute;right:-14px;bottom:-14px;width:72px;height:72px;border-radius:50%;background:var(--sc,var(--g-green));opacity:0.06;}
-.proj-list{display:flex;flex-direction:column;gap:14px;}
-.proj-row{background:#fff;border-radius:16px;border:1px solid var(--line);box-shadow:0 2px 10px rgba(0,0,0,0.04);display:grid;grid-template-columns:5px 68px 1fr auto auto;align-items:center;gap:0;overflow:hidden;cursor:pointer;transition:all 0.25s;}
-.proj-row:hover{transform:translateX(5px);box-shadow:0 8px 28px rgba(0,0,0,0.1);}
-.proj-row-stripe{height:100%;background:var(--pc,var(--g-green));}
-.proj-row-num{display:flex;align-items:center;justify-content:center;font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;color:var(--pc,var(--g-green));padding:22px 14px;}
-.proj-row-info{padding:18px 22px;}
-.proj-row-name{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:900;color:var(--deep);text-transform:uppercase;margin-bottom:4px;letter-spacing:0.01em;}
-.proj-row-obj{font-size:12px;color:var(--muted);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-.proj-row-pct{padding:18px 22px;text-align:center;border-left:1px solid var(--line);min-width:100px;}
-.proj-row-pct .pnum{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:900;line-height:1;color:var(--pc,var(--g-green));}
-.proj-row-pct .plbl{font-size:9px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:2px;}
-.proj-row-status{padding:18px 22px;border-left:1px solid var(--line);min-width:150px;}
-.status-badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;padding:5px 12px;border-radius:99px;}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px;margin-top:20px;}
+.proj-card{background:#fff;border-radius:18px;border:1px solid var(--line);box-shadow:0 4px 16px rgba(0,0,0,0.03);padding:24px;cursor:pointer;transition:all 0.2s;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
+.proj-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.06);border-color:var(--pc);}
+.proj-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px;}
+.proj-card-num{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:900;color:var(--muted);background:var(--soft);padding:3px 9px;border-radius:99px;text-transform:uppercase;letter-spacing:0.04em;}
+.proj-card-status{display:flex;flex-direction:column;align-items:flex-end;gap:4px;}
+.proj-card-name{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;color:var(--deep);text-transform:uppercase;line-height:1.2;margin-bottom:6px;letter-spacing:0.01em;}
+.proj-card-obj{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:16px;flex:1;}
+.proj-card-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--soft);}
+.proj-card-pct{display:flex;align-items:baseline;gap:4px;}
+.proj-card-pct .num{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:900;line-height:1;color:var(--pc);}
+.proj-card-pct .lbl{font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;}
+.status-badge{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;padding:4px 10px;border-radius:99px;}
 .sb-wip{background:#E8F5EE;color:var(--g-green-d);}
 .sb-future{background:var(--g-yellow-l);color:var(--g-yellow-d);}
 .sb-done{background:var(--g-blue-l);color:var(--g-blue-d);}
@@ -709,7 +709,6 @@ function renderCapa(){
         <div class="capa-kicker"><div class="pulse"></div>Portfólio Estratégico · 2026</div>
         <h1 class="capa-h1">Projetos da<br><em>Subsecretaria</em><br>de Planejamento</h1>
         <div class="capa-grad-line"></div>
-        <p class="capa-lead">Portfólio de Iniciativas, Inovação e Transformação Governamental — Subsecretaria de Planejamento, Monitoramento e Avaliação do Estado de Goiás.</p>
         <div class="capa-numbers">
           <div class="capa-num-item"><div class="n">${projects.length}</div><div class="l">Projetos</div></div>
           <div class="capa-num-item"><div class="n green">${projects.filter(p=>p.status==='wip').length}</div><div class="l">Em Andamento</div></div>
@@ -747,22 +746,23 @@ function renderCapa(){
 }
 
 function renderOverview(){
-  const rows=projects.map(p=>`
-    <div class="proj-row" onclick="openProject(${p.id})" style="--pc:${p.color}">
-      <div class="proj-row-stripe"></div>
-      <div class="proj-row-num">${String(p.id+1).padStart(2,'0')}</div>
-      <div class="proj-row-info">
-        <div class="proj-row-name">${p.name}</div>
-        <div class="proj-row-obj">${p.objective}</div>
+  const cards=projects.map(p=>`
+    <div class="proj-card" onclick="openProject(${p.id})" style="--pc:${p.color}">
+      <div class="proj-card-top">
+        <span class="proj-card-num">Projeto ${String(p.id+1).padStart(2,'0')}</span>
+        <div class="proj-card-status">
+          ${statusBadge(p)}
+          ${p.selo?`<div>${seloHtmlCard(p.selo)}</div>`:''}
+        </div>
       </div>
-      <div class="proj-row-pct">
-        <div class="pnum">${p.progress}%</div>
-        <div class="plbl">evolução</div>
-      </div>
-      <div class="proj-row-status">
-        ${statusBadge(p)}
-        ${p.prazo?`<div style="margin-top:6px"><span style="display:inline-flex;align-items:center;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;padding:3px 9px;border-radius:99px;background:#E0ECF8;color:#003E73;">◷ ${p.prazo}</span></div>`:''}
-        ${p.selo?`<div>${seloHtmlCard(p.selo)}</div>`:''}
+      <div class="proj-card-name">${p.name}</div>
+      <div class="proj-card-obj">${p.objective}</div>
+      <div class="proj-card-bottom">
+        <div class="proj-card-pct">
+          <span class="num">${p.progress}%</span>
+          <span class="lbl">evolução</span>
+        </div>
+        ${p.prazo?`<div><span style="display:inline-flex;align-items:center;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;padding:3px 9px;border-radius:99px;background:#E0ECF8;color:#003E73;">◷ ${p.prazo}</span></div>`:''}
       </div>
     </div>`).join('');
 
@@ -771,7 +771,6 @@ function renderOverview(){
     <div class="slide-section">
       <div class="slide-kicker">Portfólio Estratégico 2026</div>
       <div class="slide-h1">Todos os Projetos</div>
-      <div class="slide-sub">Visão executiva consolidada do portfólio estratégico da Subsecretaria de Planejamento, Monitoramento e Avaliação.</div>
       <div class="slide-grad-line"></div>
       <div class="summary-strip">
         <div class="sum-card" style="--sc:#00843D"><div class="big-n">${projects.length}</div><div class="lbl">Projetos no Portfólio</div><div class="icon-bg"></div></div>
@@ -779,7 +778,7 @@ function renderOverview(){
         <div class="sum-card" style="--sc:#606770"><div class="big-n">${projects.filter(p=>p.status==='future').length}</div><div class="lbl">Planejados</div><div class="icon-bg"></div></div>
         <div class="sum-card" style="--sc:#005DAA"><div class="big-n">${projects.filter(p=>p.status==='done').length}</div><div class="lbl">Concluídos</div><div class="icon-bg"></div></div>
       </div>
-      <div class="proj-list">${rows}</div>
+      <div class="proj-grid">${cards}</div>
     </div>
   </div>`;
 }
@@ -943,9 +942,7 @@ function renderDashboard(){
   return `
   <div class="slide slide-dash" id="slide-dashboard">
     <div class="dash-section">
-      <div class="slide-kicker">Visão Executiva</div>
       <div class="slide-h1">Dashboard do Portfólio</div>
-      <div class="slide-sub">Síntese analítica do portfólio estratégico 2026 — distribuição, progresso e status de todos os projetos.</div>
       <div class="slide-grad-line"></div>
       <div class="dash-kpi-row">
         <div class="dash-kpi" style="--kc:#00843D"><div class="kn">${wip}</div><div class="kl">Em Execução</div></div>
