@@ -245,6 +245,13 @@ body.sidebar-hidden .main{margin-left:0!important;}
 .sb-title, .sb-btn, .tb-crumb .org, .tb-crumb .curr, .tb-btn, .capa-kicker, .capa-h1, .capa-num-item .n, .btn-primary-capa, .btn-sec-capa, .capa-img-caption .title, .float-num, .capa-footer-org, .slide-kicker, .slide-h1, .sum-card .big-n, .proj-row-num, .proj-row-name, .proj-row-pct .pnum, .back-btn, .pn-btn, .proj-num-label, .proj-big-title, .proj-pct-badge .pn, .meta-val, .section-label, .ind-num, .col-head-title, .crono-mes, .linkbtn, .pill, .selo, .dash-kpi .kn, .panel-title, .bar-name, .bar-pct-label {
   font-family: 'Poppins', sans-serif !important;
 }
+.proj-hero-visual img.img-atena {
+  object-fit: contain !important;
+  object-position: center bottom !important;
+  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%) !important;
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 75%) !important;
+  opacity: 1 !important;
+}
 </style>
 </head>
 <body>
@@ -859,7 +866,7 @@ function renderProject(id){
         </div>
       </div>
       <div class="proj-hero-visual">
-        <img src="${img}" alt="${p.name}" onerror="this.parentElement.style.background='linear-gradient(135deg,${p.colorG},${p.color})'"/>
+        <img src="${img}" alt="${p.name}" class="${p.id === 8 ? 'img-atena' : ''}" onerror="this.parentElement.style.background='linear-gradient(135deg,${p.colorG},${p.color})'"/>
         <div class="proj-hero-visual-overlay"></div>
         <div class="proj-pct-badge"><div class="pn">${p.progress}%</div><div class="pl">evolução</div></div>
       </div>
