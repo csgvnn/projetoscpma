@@ -188,6 +188,14 @@ body.sidebar-hidden .main{margin-left:0!important;}
 .col-item-text{font-size:12px;color:var(--deep);font-weight:500;line-height:1.5;flex:1;}
 .col-item-btns{margin-top:10px;display:flex;flex-direction:column;gap:8px;}
 .col-empty{text-align:center;padding:28px 16px;color:var(--muted);font-size:12px;font-style:italic;}
+.project-filters{display:flex;gap:10px;margin:12px 0 20px;}
+.filter-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:#fff;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);cursor:pointer;transition:all 0.2s;}
+.filter-pill:hover{border-color:var(--muted);color:var(--deep);background:var(--soft);}
+.filter-pill.active{border-color:var(--deep);background:var(--soft);color:var(--deep);box-shadow:0 2px 8px rgba(0,0,0,0.04);}
+.filter-pill .dot{width:7px;height:7px;border-radius:50%;}
+.filter-pill .dot.wip{background:#005DAA;}
+.filter-pill .dot.done{background:#00843D;}
+.filter-pill .dot.late{background:#E4002B;}
 .cronograma-list{display:flex;flex-direction:column;gap:6px;margin-top:10px;}
 .crono-item{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--deep);font-weight:500;}
 .crono-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
@@ -882,6 +890,13 @@ function renderProject(id){
       `}
       <div>
         <div class="section-label">Etapas do Projeto</div>
+        ${p.id === 0 ? `
+        <div class="project-filters">
+          <button class="filter-pill" onclick="toggleProjectFilter(this, 'wip')"><span class="dot wip"></span>Em andamento</button>
+          <button class="filter-pill" onclick="toggleProjectFilter(this, 'done')"><span class="dot done"></span>Concluído</button>
+          <button class="filter-pill" onclick="toggleProjectFilter(this, 'late')"><span class="dot late"></span>Atrasado</button>
+        </div>
+        ` : ''}
         <div class="three-cols-pres">
           <div class="col-pres">
             <div class="col-pres-head">
@@ -999,6 +1014,21 @@ function renderDashboard(){
       </div>
     </div>
   </div>`;
+}
+
+function toggleProjectFilter(btn, filterType) {
+  const isAlreadyActive = btn.classList.contains('active');
+  const container = btn.parentElement;
+  container.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+  
+  const stepsContainer = container.nextElementSibling;
+  
+  if (isAlreadyActive) {
+    stepsContainer.style.display = '';
+  } else {
+    btn.classList.add('active');
+    stepsContainer.style.display = 'none';
+  }
 }
 
 function init(){
