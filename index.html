@@ -122,7 +122,7 @@ body.sidebar-hidden .main{margin-left:0!important;}
 .proj-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px;}
 .proj-card-num{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:900;color:var(--muted);background:var(--soft);padding:3px 9px;border-radius:99px;text-transform:uppercase;letter-spacing:0.04em;}
 .proj-card-status{display:flex;flex-direction:column;align-items:flex-end;gap:4px;}
-.proj-card-name{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;color:var(--deep);text-transform:uppercase;line-height:1.2;margin-bottom:6px;letter-spacing:0.01em;}
+.proj-card-name{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;color:var(--deep);line-height:1.2;margin-bottom:6px;letter-spacing:0.01em;}
 .proj-card-obj{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:16px;flex:1;}
 .proj-card-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--soft);}
 .proj-card-pct{display:flex;align-items:baseline;gap:4px;}
@@ -398,7 +398,7 @@ const projects=[
     color:'#00843D',colorG:'#005C2B',colorL:'#E8F5EE',
     status:'wip',statusLabel:'Em Andamento',
     progress:40,selo:null,prazo:'Agosto',
-    objective:'Qualificar e alinhar as entregas governamentais com o orçamento e o planejamento estratégico do Estado, garantindo coerência entre metas, recursos e resultados.',
+    objective:'Qualificar e alinhar as entregas governamentais com o orçamento e o planejamento estratégico do Estado.',
     done:[],
     doing:[
       {text:'Adequações sistêmicas',btns:[makeLinkBtn({title:'Acessar Protótipo — Adequações Sistêmicas',tag:'Protótipo',tagColor:'#7C3AED',tagBg:'#EDE9FE',url:'https://incredible-boba-384d51.netlify.app/'})]},
@@ -424,7 +424,7 @@ const projects=[
     color:'#005DAA',colorG:'#003E73',colorL:'#E0ECF8',
     status:'wip',statusLabel:'Em Andamento',
     progress:55,selo:null,prazo:'Junho',
-    objective:'Analisar a qualidade dos gastos das entregas governamentais para otimizar o gasto público, gerar boletins periódicos e realizar a calibragem físico-financeira.',
+    objective:'Assessorar a qualificação e otimização dos gastos das entregas governamentais com boletins periódicos.',
     done:[
       {text:'Protótipo do painel de análise de custeio desenvolvido a partir de uma base de dados estruturada em Excel.',btns:[]},
       {text:'Revisão de Metas',btns:[
@@ -450,7 +450,7 @@ const projects=[
     color:'#00843D',colorG:'#005C2B',colorL:'#E8F5EE',
     status:'wip',statusLabel:'Em Andamento',
     progress:70,selo:null,prazo:'Setembro',
-    objective:'Documentar e publicar as entregas governamentais em ciclos quadrimestrais, produzindo relatórios e e-books de acompanhamento dos resultados do Estado.',
+    objective:'Documentar e publicar relatórios e e-books quadrimestrais de acompanhamento das entregas do Estado.',
     done:[
       {text:'1º ao 4º Ciclo realizados em 2025',btns:[]},
       {text:'Criação do E-book · 4º Ciclo',btns:[makeLinkBtn({title:'E-book · 4º Ciclo de Entregas',tag:'E-book',tagColor:'#005C2B',tagBg:'#E8F5EE',url:'https://online.fliphtml5.com/kwdyd/wmdb/#p=1'})]},
@@ -473,7 +473,7 @@ const projects=[
     color:'#005DAA',colorG:'#003E73',colorL:'#E0ECF8',
     status:'wip',statusLabel:'Em Andamento',
     progress:60,selo:null,prazo:'Agosto',
-    objective:'Desenvolver painéis analíticos inteligentes que subsidiem a tomada de decisão governamental com dados de monitoramento, indicadores e análises estratégicas.',
+    objective:'Desenvolver painéis analíticos de monitoramento e indicadores para tomada de decisão governamental.',
     done:[
       {text:'Painel do Planejamento Governamental',btns:[makeLinkBtn({title:'Painel do Planejamento Estadual',tag:'Power BI',tagColor:'#003E73',tagBg:'#E0ECF8',url:'https://app.powerbi.com/reportEmbed?reportId=8e365b6c-ac6d-4e54-b9f4-3f61b4830392&autoAuth=true&ctid=67fd431c-b2ad-4867-81bc-d756220b56d4'})]},
       {text:'Painel de Indicadores Socioeconômicos',btns:[makeLinkBtn({title:'Indicadores Socioeconômicos',tag:'Big Data',tagColor:'#003E73',tagBg:'#E0ECF8',url:'https://bigdataestadual.sistemas.go.gov.br/Login/Inicio?ReturnUrl=%2fPrincipal%2fInicioIntranet'})]},
@@ -501,7 +501,7 @@ const projects=[
     color:'#C9A400',colorG:'#7A6200',colorL:'#FFF8D6',
     status:'wip',statusLabel:'Em Andamento',
     progress:35,selo:'estruturante',prazo:'Julho',
-    objective:'Implementar a integração de dados do SIPLAM no sistema Business Object para o alinhamento em tempo real das entregas com a execução orçamentária.',
+    objective:'Integrar os dados do SIPLAM no Business Object para alinhamento em tempo real com a execução orçamentária.',
     obsEstrategica:'Os projetos de LOA 2027 orientada a entregas, Análise da Qualidade do Gasto e Relatório de Entregas Governamentais possuem dependência direta do desenvolvimento e implantação do Universo SIPLAM no B.O. para viabilizar suas automações.',
     done:[{text:'Ficha conceitual',btns:[]}],
     doing:[{text:'Implementação',btns:[]}],
@@ -520,7 +520,7 @@ const projects=[
     color:'#FFD100',colorG:'#7A6200',colorL:'#FFF8D6',
     status:'future',statusLabel:'Planejado',
     progress:0,selo:'futuro',prazo:'Dezembro',
-    objective:'Desenvolver a metodologia e o sistema para o Plano Plurianual 2028-2031, incluindo benchmarking de abordagens, estruturação metodológica e implementação do Novo SIPLAM.',
+    objective:'Desenvolver a metodologia e o sistema do Plano Plurianual 2028-2031 e do Novo SIPLAM.',
     done:[],doing:[],
     todo:[
       {text:'Benchmarking das abordagens do PPA',btns:[]},
@@ -540,7 +540,7 @@ const projects=[
     color:'#005DAA',colorG:'#003E73',colorL:'#E0ECF8',
     status:'wip',statusLabel:'Em Andamento',
     progress:50,selo:'inovacao',prazo:'Variável',
-    objective:'Desenvolver o RUMO como plataforma integradora do ecossistema de planejamento governamental, substituindo o SIPLAM com maior flexibilidade, inteligência e integração.',
+    objective:'Desenvolver a plataforma integradora do planejamento estadual, substituindo o SIPLAM.',
     done:[
       {text:'Arcabouço conceitual',btns:[]},
       {text:'Criação da Assessoria de Inovação em Políticas Públicas (AIPOP)',btns:[]},
@@ -570,7 +570,7 @@ const projects=[
     color:'#00843D',colorG:'#005C2B',colorL:'#E8F5EE',
     status:'future',statusLabel:'Planejado',
     progress:0,selo:'futuro',prazo:null,
-    objective:'Comunicar de forma acessível e transparente para o cidadão goiano como os recursos públicos são aplicados, por meio de conteúdo audiovisual — Vídeo/Podcast institucional.',
+    objective:'Comunicar de forma acessível como os recursos públicos são aplicados em formato audiovisual.',
     done:[],doing:[],
     todo:[{text:'Projeto de comunicação pública em formato podcast',btns:[makeLinkBtn({title:'Acessar Protótipo — Podcast',tag:'Protótipo',tagColor:'#7C3AED',tagBg:'#EDE9FE',url:'https://claude.ai/public/artifacts/48df8c3b-50d4-425b-9fac-f38e7966e228'})]}],
     indicators:[
@@ -584,7 +584,7 @@ const projects=[
     color:'#005DAA',colorG:'#003E73',colorL:'#E0ECF8',
     status:'wip',statusLabel:'Em Andamento',
     progress:80,selo:'inovacao',prazo:'Agosto',
-    objective:'Otimizar o atendimento aos usuários da Rede de Planejamento por meio de um chatbot com Inteligência Artificial no WhatsApp, respondendo a dúvidas com base em manuais internos e automatizando o envio de demandas complexas para os e-mails dos setores.',
+    objective:'Otimizar o atendimento aos usuários da Rede de Planejamento com inteligência artificial via WhatsApp.',
     done:[
       {text:'Integração de IA e WhatsApp',btns:[]},
       {text:'Estruturação de menus e fluxos',btns:[]},
