@@ -396,6 +396,7 @@ const projImages=[
   'https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?w=800&q=80',
   'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80',
   'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80',
+  'https://images.unsplash.com/photo-1675557009875-436f09780264?w=800&q=80',
 ];
 
 const projects=[
@@ -585,6 +586,35 @@ const projects=[
       {num:'0',label:'Em Execução',color:'#005DAA'},
       {num:'1',label:'Planejado',color:'#606770'}
     ]
+  },
+  {
+    id:8,name:'ATENA - Assistente virtual',
+    color:'#005DAA',colorG:'#003E73',colorL:'#E0ECF8',
+    status:'wip',statusLabel:'Em Andamento',
+    progress:80,selo:'inovacao',prazo:'Agosto',
+    objective:'Otimizar o atendimento aos usuários da Rede de Planejamento por meio de um chatbot com Inteligência Artificial no WhatsApp, respondendo a dúvidas com base em manuais internos e automatizando o envio de demandas complexas para os e-mails dos setores.',
+    done:[
+      {text:'Arquitetura e Motor da Atena: Integração do WhatsApp via socket e conexão com a Inteligência Artificial (Google Gemini API).',btns:[]},
+      {text:'Estruturação de Menus: Criação dos fluxos guiados para cadastros (usuários/locais), dúvidas e suporte técnico.',btns:[]},
+      {text:'Roteamento com SLA: Envio automatizado de chamados por e-mail para as gerências correspondentes com controle de prazos de SLA.',btns:[]},
+      {text:'Painel de Resolução Web: Desenvolvimento de página de conclusão rápida para os setores resolverem chamados diretamente do e-mail.',btns:[]},
+      {text:'Módulo de Relatórios: Sistema de geração de estatísticas mensais e feedbacks de satisfação salvos em planilhas CSV.',btns:[]}
+    ],
+    doing:[
+      {text:'Testes de Homologação: Testes de usabilidade e validação das respostas de IA após o período de férias.',btns:[]},
+      {text:'Alinhamento da Base de Conhecimento: Ingestão, triagem e revisão de novos PDFs e manuais de planejamento na pasta documents/.',btns:[]},
+      {text:'Validação de Fluxos de E-mail: Testes de recebimento e envio de e-mails usando contas institucionais reais da equipe.',btns:[]}
+    ],
+    todo:[
+      {text:'Hospedagem em Produção: Implantação do robô em servidor em nuvem (VPS) estável da TI com proxy reverso (Nginx).',btns:[]},
+      {text:'Migração de Banco de Dados: Planejamento e transição opcional dos bancos de arquivos locais JSON para um banco relacional (ex: PostgreSQL).',btns:[]},
+      {text:'Lançamento Oficial: Divulgação do número de WhatsApp e início do suporte oficial para toda a Rede de Planejamento.',btns:[]}
+    ],
+    indicators:[
+      {num:'5',label:'Entregues',color:'#00843D'},
+      {num:'3',label:'Em Desenvolvimento',color:'#005DAA'},
+      {num:'3',label:'Planejados',color:'#606770'}
+    ]
   }
 ];
 
@@ -689,10 +719,10 @@ function renderCapa(){
         <div class="capa-grad-line"></div>
         <p class="capa-lead">Portfólio de Iniciativas, Inovação e Transformação Governamental — Subsecretaria de Planejamento, Monitoramento e Avaliação do Estado de Goiás.</p>
         <div class="capa-numbers">
-          <div class="capa-num-item"><div class="n">8</div><div class="l">Projetos</div></div>
-          <div class="capa-num-item"><div class="n green">6</div><div class="l">Em Andamento</div></div>
-          <div class="capa-num-item"><div class="n gray">2</div><div class="l">Planejados</div></div>
-          <div class="capa-num-item"><div class="n green">0</div><div class="l">Concluídos</div></div>
+          <div class="capa-num-item"><div class="n">${projects.length}</div><div class="l">Projetos</div></div>
+          <div class="capa-num-item"><div class="n green">${projects.filter(p=>p.status==='wip').length}</div><div class="l">Em Andamento</div></div>
+          <div class="capa-num-item"><div class="n gray">${projects.filter(p=>p.status==='future').length}</div><div class="l">Planejados</div></div>
+          <div class="capa-num-item"><div class="n green">${projects.filter(p=>p.status==='done').length}</div><div class="l">Concluídos</div></div>
         </div>
         <div class="capa-cta">
           <button class="btn-primary-capa" onclick="showSlide('overview')">
@@ -712,7 +742,7 @@ function renderCapa(){
               <div class="title">Transformando dados em<br>decisões estratégicas</div>
             </div>
           </div>
-          <div class="capa-float-card tl"><div class="float-num">8</div><div class="float-lbl">Projetos ativos</div></div>
+          <div class="capa-float-card tl"><div class="float-num">${projects.length}</div><div class="float-lbl">Projetos ativos</div></div>
           <div class="capa-float-card br"><div class="float-num">2026</div><div class="float-lbl">Portfólio estratégico</div></div>
         </div>
       </div>
@@ -752,10 +782,10 @@ function renderOverview(){
       <div class="slide-sub">Visão executiva consolidada do portfólio estratégico da Subsecretaria de Planejamento, Monitoramento e Avaliação.</div>
       <div class="slide-grad-line"></div>
       <div class="summary-strip">
-        <div class="sum-card" style="--sc:#00843D"><div class="big-n">8</div><div class="lbl">Projetos no Portfólio</div><div class="icon-bg"></div></div>
-        <div class="sum-card" style="--sc:#00843D"><div class="big-n">6</div><div class="lbl">Em Andamento</div><div class="icon-bg"></div></div>
-        <div class="sum-card" style="--sc:#606770"><div class="big-n">2</div><div class="lbl">Planejados</div><div class="icon-bg"></div></div>
-        <div class="sum-card" style="--sc:#005DAA"><div class="big-n">0</div><div class="lbl">Concluídos</div><div class="icon-bg"></div></div>
+        <div class="sum-card" style="--sc:#00843D"><div class="big-n">${projects.length}</div><div class="lbl">Projetos no Portfólio</div><div class="icon-bg"></div></div>
+        <div class="sum-card" style="--sc:#00843D"><div class="big-n">${projects.filter(p=>p.status==='wip').length}</div><div class="lbl">Em Andamento</div><div class="icon-bg"></div></div>
+        <div class="sum-card" style="--sc:#606770"><div class="big-n">${projects.filter(p=>p.status==='future').length}</div><div class="lbl">Planejados</div><div class="icon-bg"></div></div>
+        <div class="sum-card" style="--sc:#005DAA"><div class="big-n">${projects.filter(p=>p.status==='done').length}</div><div class="lbl">Concluídos</div><div class="icon-bg"></div></div>
       </div>
       <div class="proj-list">${rows}</div>
     </div>
@@ -882,6 +912,24 @@ function renderProject(id){
 }
 
 function renderDashboard(){
+  const total = projects.length;
+  const wip = projects.filter(p=>p.status==='wip').length;
+  const future = projects.filter(p=>p.status==='future').length;
+  const done = projects.filter(p=>p.status==='done').length;
+  const estruturante = projects.filter(p=>p.selo==='estruturante').length;
+  const inovacao = projects.filter(p=>p.selo==='inovacao').length;
+
+  const circ = 2 * Math.PI * 50; 
+  const pctWip = total > 0 ? (wip / total) : 0;
+  const pctFuture = total > 0 ? (future / total) : 0;
+  const pctDone = total > 0 ? (done / total) : 0;
+
+  const dashWip = `${pctWip * circ} ${circ - (pctWip * circ)}`;
+  const dashFuture = `${pctFuture * circ} ${circ - (pctFuture * circ)}`;
+  const offsetFuture = -(pctWip * circ);
+  const dashDone = `${pctDone * circ} ${circ - (pctDone * circ)}`;
+  const offsetDone = -((pctWip + pctFuture) * circ);
+
   const bars=projects.map(p=>{
     const c=p.status==='future'
       ?'linear-gradient(90deg,#606770,#404550)'
@@ -908,11 +956,11 @@ function renderDashboard(){
       <div class="slide-sub">Síntese analítica do portfólio estratégico 2026 — distribuição, progresso e status de todos os projetos.</div>
       <div class="slide-grad-line"></div>
       <div class="dash-kpi-row">
-        <div class="dash-kpi" style="--kc:#00843D"><div class="kn">6</div><div class="kl">Em Execução</div></div>
-        <div class="dash-kpi" style="--kc:#606770"><div class="kn">2</div><div class="kl">Planejados</div></div>
-        <div class="dash-kpi" style="--kc:#005DAA"><div class="kn">0</div><div class="kl">Concluídos</div></div>
-        <div class="dash-kpi" style="--kc:#C9A400"><div class="kn">1</div><div class="kl">Proj. Estruturante</div></div>
-        <div class="dash-kpi" style="--kc:#005DAA"><div class="kn">1</div><div class="kl">Proj. Inovação</div></div>
+        <div class="dash-kpi" style="--kc:#00843D"><div class="kn">${wip}</div><div class="kl">Em Execução</div></div>
+        <div class="dash-kpi" style="--kc:#606770"><div class="kn">${future}</div><div class="kl">Planejados</div></div>
+        <div class="dash-kpi" style="--kc:#005DAA"><div class="kn">${done}</div><div class="kl">Concluídos</div></div>
+        <div class="dash-kpi" style="--kc:#C9A400"><div class="kn">${estruturante}</div><div class="kl">Proj. Estruturante</div></div>
+        <div class="dash-kpi" style="--kc:#005DAA"><div class="kn">${inovacao}</div><div class="kl">Proj. Inovação</div></div>
       </div>
       <div class="dash-body">
         <div class="dash-donut-panel">
@@ -923,19 +971,21 @@ function renderDashboard(){
           <div class="donut-wrap">
             <svg width="140" height="140" viewBox="0 0 120 120">
               <circle cx="60" cy="60" r="50" fill="none" stroke="#F4F7F7" stroke-width="18"/>
-              <circle cx="60" cy="60" r="50" fill="none" stroke="#00843D" stroke-width="18"
-                stroke-dasharray="235.6 78.5" stroke-dashoffset="0" stroke-linecap="round"/>
-              <circle cx="60" cy="60" r="50" fill="none" stroke="#606770" stroke-width="18"
-                stroke-dasharray="78.5 235.6" stroke-dashoffset="-235.6" stroke-linecap="round"/>
-              <text x="60" y="55" text-anchor="middle" font-size="16" font-weight="900" font-family="Barlow Condensed,sans-serif" fill="#10233D">8</text>
-              <text x="60" y="69" text-anchor="middle" font-size="9" fill="#606770" font-family="Barlow,sans-serif">projetos</text>
+              ${wip > 0 ? `<circle cx="60" cy="60" r="50" fill="none" stroke="#00843D" stroke-width="18"
+                stroke-dasharray="${dashWip}" stroke-dashoffset="0" stroke-linecap="round"/>` : ''}
+              ${future > 0 ? `<circle cx="60" cy="60" r="50" fill="none" stroke="#606770" stroke-width="18"
+                stroke-dasharray="${dashFuture}" stroke-dashoffset="${offsetFuture}" stroke-linecap="round"/>` : ''}
+              ${done > 0 ? `<circle cx="60" cy="60" r="50" fill="none" stroke="#005DAA" stroke-width="18"
+                stroke-dasharray="${dashDone}" stroke-dashoffset="${offsetDone}" stroke-linecap="round"/>` : ''}
+              <text x="60" y="55" text-anchor="middle" font-size="16" font-weight="900" font-family="'Poppins', sans-serif" fill="#10233D">${total}</text>
+              <text x="60" y="69" text-anchor="middle" font-size="9" fill="#606770" font-family="'Poppins', sans-serif">projetos</text>
             </svg>
             <div class="donut-legend">
-              <div class="dl"><div class="dl-dot" style="background:#00843D"></div><div class="dl-name">Em Andamento</div><div class="dl-val">6 (75%)</div></div>
-              <div class="dl"><div class="dl-dot" style="background:#606770"></div><div class="dl-name">Planejados</div><div class="dl-val">2 (25%)</div></div>
-              <div class="dl"><div class="dl-dot" style="background:#005DAA"></div><div class="dl-name">Concluídos</div><div class="dl-val">0 (0%)</div></div>
-              <div class="dl"><div class="dl-dot" style="background:#C9A400"></div><div class="dl-name">Estruturante</div><div class="dl-val">1</div></div>
-              <div class="dl"><div class="dl-dot" style="background:#005DAA;border:2px solid #93C5FD"></div><div class="dl-name">Inovação</div><div class="dl-val">1</div></div>
+              <div class="dl"><div class="dl-dot" style="background:#00843D"></div><div class="dl-name">Em Andamento</div><div class="dl-val">${wip} (${Math.round(pctWip*100)}%)</div></div>
+              <div class="dl"><div class="dl-dot" style="background:#606770"></div><div class="dl-name">Planejados</div><div class="dl-val">${future} (${Math.round(pctFuture*100)}%)</div></div>
+              <div class="dl"><div class="dl-dot" style="background:#005DAA"></div><div class="dl-name">Concluídos</div><div class="dl-val">${done} (${Math.round(pctDone*100)}%)</div></div>
+              <div class="dl"><div class="dl-dot" style="background:#C9A400"></div><div class="dl-name">Estruturante</div><div class="dl-val">${estruturante}</div></div>
+              <div class="dl"><div class="dl-dot" style="background:#005DAA;border:2px solid #93C5FD"></div><div class="dl-name">Inovação</div><div class="dl-val">${inovacao}</div></div>
             </div>
           </div>
         </div>
