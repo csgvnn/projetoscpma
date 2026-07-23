@@ -459,7 +459,8 @@ const projects=[
     id:2,name:'Relatório de Entregas Governamentais',
     color:'#00843D',colorG:'#005C2B',colorL:'#E8F5EE',
     status:'wip',statusLabel:'Em Andamento',
-    progress:70,selo:null,prazo:'Setembro',
+    progress:70,selo:null,prazo:'Julho',
+    equipe:'GEMONIT',
     objective:'Documentar e publicar relatórios e e-books quadrimestrais de acompanhamento das entregas do Estado.',
     done:[
       {text:'Abertura Ciclo c/ as Pastas - 11/05', status:'done', btns:[]},
@@ -861,6 +862,11 @@ function renderProject(id){
   const key2 = (p.id === 0 || p.id === 2) ? 'Próximos Passos' : 'Em Execução';
   const key3 = (p.id === 0 || p.id === 2) ? 'Riscos' : 'Planejados';
 
+  const colsCount = p.id === 2 ? 8 : 7;
+  const paddingStyle = p.id === 2 ? 'style="padding: 12px 6px;"' : '';
+  const valFontSizeStyle = p.id === 2 ? 'style="font-size: 14px;"' : '';
+  const equipeDisplay = p.equipe || '—';
+
   return `
   <div class="slide slide-proj" id="slide-proj-${id}">
     <div class="proj-nav-bar">
@@ -890,14 +896,15 @@ function renderProject(id){
       </div>
     </div>
     <div class="proj-body">
-      <div class="meta-bar">
-        <div class="meta-item"><div class="meta-key">Status</div><div class="meta-val" style="font-size:14px;color:${p.color}">${p.statusLabel}</div></div>
-        <div class="meta-item"><div class="meta-key">Evolução</div><div class="meta-val" style="color:var(--g-green)">${p.progress}%</div></div>
-        <div class="meta-item"><div class="meta-key">${key1}</div><div class="meta-val" style="color:var(--g-green)">${p.done.length}</div></div>
-        <div class="meta-item"><div class="meta-key">${key2}</div><div class="meta-val" style="color:var(--g-blue)">${p.doing.length}</div></div>
-        <div class="meta-item"><div class="meta-key">${key3}</div><div class="meta-val" style="color:var(--muted)">${p.todo.length}</div></div>
-        <div class="meta-item"><div class="meta-key">Prazo</div><div class="meta-val prazo">${prazoDisplay}</div></div>
-        <div class="meta-item"><div class="meta-key">Equipe Responsável</div><div class="meta-val">—</div></div>
+      <div class="meta-bar" style="grid-template-columns: repeat(${colsCount}, 1fr);">
+        ${p.id === 2 ? `<div class="meta-item" ${paddingStyle}><div class="meta-key">Ciclo</div><div class="meta-val" ${valFontSizeStyle}>5°</div></div>` : ''}
+        <div class="meta-item" ${paddingStyle}><div class="meta-key">Status</div><div class="meta-val" style="font-size:14px;color:${p.color}">${p.statusLabel}</div></div>
+        <div class="meta-item" ${paddingStyle}><div class="meta-key">Evolução</div><div class="meta-val" style="color:var(--g-green); ${p.id === 2 ? 'font-size: 14px;' : ''}">${p.progress}%</div></div>
+        <div class="meta-item" ${paddingStyle}><div class="meta-key">${key1}</div><div class="meta-val" style="color:var(--g-green); ${p.id === 2 ? 'font-size: 14px;' : ''}">${p.done.length}</div></div>
+        <div class="meta-item" ${paddingStyle}><div class="meta-key">${key2}</div><div class="meta-val" style="color:var(--g-blue); ${p.id === 2 ? 'font-size: 14px;' : ''}">${p.doing.length}</div></div>
+        <div class="meta-item" ${paddingStyle}><div class="meta-key">${key3}</div><div class="meta-val" style="color:var(--muted); ${p.id === 2 ? 'font-size: 14px;' : ''}">${p.todo.length}</div></div>
+        <div class="meta-item" ${paddingStyle}><div class="meta-key">Prazo</div><div class="meta-val prazo" style="${p.id === 2 ? 'font-size: 13px;' : ''}">${prazoDisplay}</div></div>
+        <div class="meta-item" ${paddingStyle}><div class="meta-key">Equipe Responsável</div><div class="meta-val" ${valFontSizeStyle}>${equipeDisplay}</div></div>
       </div>
       ${obs}
 
