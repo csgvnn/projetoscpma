@@ -507,7 +507,7 @@ const projects=[
     progress:null,selo:'estruturante',prazo:'Julho',
     equipe:'SMA',
     atualizacao:'23/07/2026',
-    atualizacaoHora:'15:23',
+    atualizacaoHora:'17:28',
     objective:'Integrar os dados do SIPLAM no Business Object para alinhamento em tempo real com a execução orçamentária.',
     obsEstrategica:null,
     done:[],
@@ -526,7 +526,7 @@ const projects=[
     progress:0,selo:'futuro',prazo:'Dezembro',
     equipe:'SUPLAN',
     atualizacao:'23/07/2026',
-    atualizacaoHora:'17:12',
+    atualizacaoHora:'17:28',
     objective:'Desenvolver a metodologia e o sistema do Plano Plurianual 2028-2031 e do Novo SIPLAM.',
     done:[
       {text:'Benchmarking das abordagens do PPA',status:'todo',btns:[]},
@@ -550,7 +550,7 @@ const projects=[
     progress:null,selo:'inovacao',prazo:'—',
     equipe:'GEPLAN',
     atualizacao:'23/07/2026',
-    atualizacaoHora:'16:59',
+    atualizacaoHora:'17:28',
     objective:'Desenvolver a plataforma integradora do planejamento estadual, substituindo o SIPLAM.',
     done:[],
     doing:[],
@@ -890,9 +890,7 @@ function renderProject(id){
           <div class="proj-tags">${pillHtml(p)}${seloHtml(p.selo)}</div>
         </div>
       </div>
-      <div class="proj-hero-visual">
-        <img src="${img}" alt="${p.name}" onerror="this.parentElement.style.background='linear-gradient(135deg,${p.colorG},${p.color})'"/>
-        <div class="proj-hero-visual-overlay" style="background:linear-gradient(90deg,${p.colorG} 0%,transparent 50%)"></div>
+      <div class="proj-hero-visual" style="background:linear-gradient(135deg,${p.colorG},${p.color})">
         <div class="proj-pct-badge"><div class="pn">${p.progress !== null && p.progress !== undefined ? p.progress + '%' : '—'}</div><div class="pl">evolução</div></div>
       </div>
     </div>
@@ -946,7 +944,7 @@ function renderProject(id){
         </div>
       </div>
       <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: center; align-items: center; font-size: 11px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;">
-        <div>Última atualização: ${p.atualizacao || '23/07/2026'} às ${p.atualizacaoHora || '14:53'}</div>
+        <div>Última atualização: ${p.atualizacao || '23/07/2026'} às ${p.atualizacaoHora || '17:28'}</div>
       </div>
     </div>
   </div>`;
