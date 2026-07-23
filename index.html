@@ -196,6 +196,7 @@ body.sidebar-hidden .main{margin-left:0!important;}
 .filter-pill .dot.wip{background:#005DAA;}
 .filter-pill .dot.done{background:#00843D;}
 .filter-pill .dot.late{background:#E4002B;}
+.filter-pill .dot.blocked{background:#FFD100;}
 .filter-pill .dot.todo{background:#080808;}
 .cronograma-list{display:flex;flex-direction:column;gap:6px;margin-top:10px;}
 .crono-item{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--deep);font-weight:500;}
@@ -473,7 +474,7 @@ const projects=[
       {text:'Envio Relatório Final aos Secretários - Prev. 29/07', status:'todo', btns:[]}
     ],
     todo:[
-      {text:'Atrasos no Validação e Consolidação EBOOK', status:'todo', btns:[]},
+      {text:'Atrasos no Validação e Consolidação EBOOK', status:'blocked', btns:[]},
       {text:'Alinhamento com Comunicação Setorial/Restrição Eleição', status:'todo', btns:[]}
     ],
     indicators:[
@@ -812,7 +813,8 @@ function renderProject(id){
         done: ['#00843D','#F4FAF6','✓'],
         wip:  ['#005DAA','#EDF3FA','→'],
         late: ['#E4002B','#FDF2F4','!'],
-        todo: ['#080808','#F4F7F7','◦']
+        todo: ['#080808','#F4F7F7','◦'],
+        blocked: ['#C9A400','#FFF8D6','⚠']
       };
       const [color, bg, marker] = map[status] || [defaultColor, defaultBg, defaultMarker];
 
@@ -905,6 +907,7 @@ function renderProject(id){
           <button class="filter-pill" onclick="toggleProjectFilter(this, 'wip')"><span class="dot wip"></span>Em andamento</button>
           <button class="filter-pill" onclick="toggleProjectFilter(this, 'done')"><span class="dot done"></span>Concluído</button>
           <button class="filter-pill" onclick="toggleProjectFilter(this, 'late')"><span class="dot late"></span>Atrasado</button>
+          <button class="filter-pill" onclick="toggleProjectFilter(this, 'blocked')"><span class="dot blocked"></span>Entraves</button>
           <button class="filter-pill" onclick="toggleProjectFilter(this, 'todo')"><span class="dot todo"></span>Não iniciado</button>
         </div>
         <div class="three-cols-pres">
