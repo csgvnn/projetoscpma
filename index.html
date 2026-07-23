@@ -460,20 +460,25 @@ const projects=[
     progress:70,selo:null,prazo:'Setembro',
     objective:'Documentar e publicar relatórios e e-books quadrimestrais de acompanhamento das entregas do Estado.',
     done:[
-      {text:'1º ao 4º Ciclo realizados em 2025',btns:[]},
-      {text:'Criação do E-book · 4º Ciclo',btns:[makeLinkBtn({title:'E-book · 4º Ciclo de Entregas',tag:'E-book',tagColor:'#005C2B',tagBg:'#E8F5EE',url:'https://online.fliphtml5.com/kwdyd/wmdb/#p=1'})]},
-      {text:'Sistema de Cadastro GECEG',btns:[makeLinkBtn({title:'Cadastro GECEG',tag:'Sistema',tagColor:'#003E73',tagBg:'#E0ECF8',url:'https://apex.sefaz.go.gov.br/ords/r/rap/rap255/login?session=1266880393861'})]},
-      {text:'5º Ciclo',crono:'5_done',btns:[]}
+      {text:'Abertura Ciclo c/ as Pastas - 11/05',btns:[]},
+      {text:'Acompanhamento c/ as Pastas - 16/06',btns:[]},
+      {text:'Consolidação e Validação Conteúdo por Eixo',btns:[]},
+      {text:'Diagramação/Layout EBOOK 28/07',btns:[]},
+      {text:'Envio SEI - Relatório Final aos Secretários 29/07',btns:[]}
     ],
-    doing:[{text:'5º Ciclo',crono:true,btns:[]}],
+    doing:[
+      {text:'Consolidação e Validação dos Eixos - Previsão<br><small style="opacity: 0.85; font-weight: 500; font-size: 11px;">Concluídos: Eixo VIII e IX &nbsp;|&nbsp; 22/07: Eixo II &nbsp;|&nbsp; 23/07: Eixos: I, VI, VII e X &nbsp;|&nbsp; 27/07: Eixos III, IV e V</small>',btns:[]},
+      {text:'Finalização Diagramação/Layout - Previsão<br><small style="opacity: 0.85; font-weight: 500; font-size: 11px;">Concluídos: Eixo VIII e IX &nbsp;|&nbsp; 27/07: Eixos I, II, VI, VII e X &nbsp;|&nbsp; 28/07: Eixos III, IV e V</small>',btns:[]},
+      {text:'Envio Relatório Final aos Secretários - Prev. 29/07',btns:[]}
+    ],
     todo:[
-      {text:'6º Ciclo',crono:6,btns:[]},
-      {text:'Estudo de viabilidade para aproveitamento na prestação de contas dos gestores',btns:[]}
+      {text:'Atrasos no Validação e Consolidação EBOOK',btns:[]},
+      {text:'Alinhamento com Comunicação Setorial/Restrição Eleição',btns:[]}
     ],
     indicators:[
-      {num:'4',label:'Ciclos Concluídos',color:'#00843D'},
-      {num:'1',label:'Ciclo em Andamento',color:'#005DAA'},
-      {num:'2',label:'Ciclos Planejados',color:'#606770'}
+      {num:'5',label:'Marcos',color:'#00843D'},
+      {num:'3',label:'Próximos Passos',color:'#005DAA'},
+      {num:'2',label:'Riscos',color:'#606770'}
     ]
   },
   {
@@ -835,14 +840,14 @@ function renderProject(id){
 
   const prazoDisplay=p.id===6?'Ver etapas':p.prazo||'—';
 
-  const col1Title = p.id === 0 ? 'Marcos' : 'O que foi feito';
-  const col2Title = p.id === 0 ? 'Próximos passos' : 'O que está sendo feito';
-  const col3Title = p.id === 0 ? 'Riscos' : 'O que será feito';
-  const col3Empty = p.id === 0 ? '' : undefined;
+  const col1Title = (p.id === 0 || p.id === 2) ? 'Marcos' : 'O que foi feito';
+  const col2Title = (p.id === 0 || p.id === 2) ? 'Próximos passos' : 'O que está sendo feito';
+  const col3Title = (p.id === 0 || p.id === 2) ? 'Riscos' : 'O que será feito';
+  const col3Empty = (p.id === 0 || p.id === 2) ? '' : undefined;
 
-  const key1 = p.id === 0 ? 'Marcos' : 'Entregues';
-  const key2 = p.id === 0 ? 'Próximos Passos' : 'Em Execução';
-  const key3 = p.id === 0 ? 'Riscos' : 'Planejados';
+  const key1 = (p.id === 0 || p.id === 2) ? 'Marcos' : 'Entregues';
+  const key2 = (p.id === 0 || p.id === 2) ? 'Próximos Passos' : 'Em Execução';
+  const key3 = (p.id === 0 || p.id === 2) ? 'Riscos' : 'Planejados';
 
   return `
   <div class="slide slide-proj" id="slide-proj-${id}">
