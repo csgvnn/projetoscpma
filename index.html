@@ -461,20 +461,20 @@ const projects=[
     progress:70,selo:null,prazo:'Setembro',
     objective:'Documentar e publicar relatórios e e-books quadrimestrais de acompanhamento das entregas do Estado.',
     done:[
-      {text:'Abertura Ciclo c/ as Pastas - 11/05',btns:[]},
-      {text:'Acompanhamento c/ as Pastas - 16/06',btns:[]},
-      {text:'Consolidação e Validação Conteúdo por Eixo',btns:[]},
-      {text:'Diagramação/Layout EBOOK 28/07',btns:[]},
-      {text:'Envio SEI - Relatório Final aos Secretários 29/07',btns:[]}
+      {text:'Abertura Ciclo c/ as Pastas - 11/05', status:'done', btns:[]},
+      {text:'Acompanhamento c/ as Pastas - 16/06', status:'done', btns:[]},
+      {text:'Consolidação e Validação Conteúdo por Eixo', status:'late', btns:[]},
+      {text:'Diagramação/Layout EBOOK 28/07', status:'wip', btns:[]},
+      {text:'Envio SEI - Relatório Final aos Secretários 29/07', status:'todo', btns:[]}
     ],
     doing:[
-      {text:'Consolidação e Validação dos Eixos - Previsão<br><small style="opacity: 0.85; font-weight: 500; font-size: 11px;">Concluídos: Eixo VIII e IX &nbsp;|&nbsp; 22/07: Eixo II &nbsp;|&nbsp; 23/07: Eixos: I, VI, VII e X &nbsp;|&nbsp; 27/07: Eixos III, IV e V</small>',btns:[]},
-      {text:'Finalização Diagramação/Layout - Previsão<br><small style="opacity: 0.85; font-weight: 500; font-size: 11px;">Concluídos: Eixo VIII e IX &nbsp;|&nbsp; 27/07: Eixos I, II, VI, VII e X &nbsp;|&nbsp; 28/07: Eixos III, IV e V</small>',btns:[]},
-      {text:'Envio Relatório Final aos Secretários - Prev. 29/07',btns:[]}
+      {text:'Consolidação e Validação dos Eixos - Previsão<br><small style="opacity: 0.85; font-weight: 500; font-size: 11px;">Concluídos: Eixo VIII e IX &nbsp;|&nbsp; 22/07: Eixo II &nbsp;|&nbsp; 23/07: Eixos: I, VI, VII e X &nbsp;|&nbsp; 27/07: Eixos III, IV e V</small>', status:'wip', btns:[]},
+      {text:'Finalização Diagramação/Layout - Previsão<br><small style="opacity: 0.85; font-weight: 500; font-size: 11px;">Concluídos: Eixo VIII e IX &nbsp;|&nbsp; 27/07: Eixos I, II, VI, VII e X &nbsp;|&nbsp; 28/07: Eixos III, IV e V</small>', status:'wip', btns:[]},
+      {text:'Envio Relatório Final aos Secretários - Prev. 29/07', status:'wip', btns:[]}
     ],
     todo:[
-      {text:'Atrasos no Validação e Consolidação EBOOK',btns:[]},
-      {text:'Alinhamento com Comunicação Setorial/Restrição Eleição',btns:[]}
+      {text:'Atrasos no Validação e Consolidação EBOOK', status:'late', btns:[]},
+      {text:'Alinhamento com Comunicação Setorial/Restrição Eleição', status:'late', btns:[]}
     ],
     indicators:[
       {num:'5',label:'Marcos',color:'#00843D'},
