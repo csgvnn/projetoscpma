@@ -557,28 +557,13 @@ const projects=[
     status:'wip',statusLabel:'Em Andamento',
     progress:50,selo:'inovacao',prazo:'Variável',
     objective:'Desenvolver a plataforma integradora do planejamento estadual, substituindo o SIPLAM.',
-    done:[
-      {text:'Arcabouço conceitual',btns:[]},
-      {text:'Criação da Assessoria de Inovação em Políticas Públicas (AIPOP)',btns:[]},
-      {text:'Alinhamento estratégico PPA-PEI via ranking PCP',btns:[]},
-      {text:'Manual do PEI',btns:[makeLinkBtn({title:'Acessar Manual do PEI',tag:'Manual PDF',tagColor:'#003E73',tagBg:'#E0ECF8',url:'https://goias.gov.br/economia/wp-content/uploads/sites/45/2025/05/Manual-PEI-2025-Versao-1.0-Final.pdf'})]},
-      {text:'RUMO Beta',btns:[makeLinkBtn({title:'RUMO Beta',tag:'Sistema',tagColor:'#003E73',tagBg:'#E0ECF8',url:'https://apex.sefaz.go.gov.br/ords/r/rap/rumo/login?session=12144475768959'})]}
-    ],
-    doing:[
-      {text:'IPE – Integrador de Projetos, Planos de Ação e Processos',btns:[],prazoItem:'Sem previsão'},
-      {text:'Gestão de Projetos',btns:[],prazoItem:'Sem previsão'},
-      {text:'Gestão de Planos de Ação',btns:[],prazoItem:'Sem previsão'},
-      {text:'Caixa de Ferramentas',btns:[],prazoItem:'Sem previsão'},
-      {text:'Site RUMO',btns:[makeLinkBtn({title:'Acessar Site RUMO',tag:'Site',tagColor:'#003E73',tagBg:'#E0ECF8',url:'https://goias.gov.br/economia/framework-rumo'})],prazoItem:'Junho'}
-    ],
-    todo:[
-      {text:'Prestação de contas dos gestores',btns:[]},
-      {text:'Novo SIPLAM',btns:[]}
-    ],
+    done:[],
+    doing:[],
+    todo:[],
     indicators:[
-      {num:'5',label:'Entregues',color:'#00843D'},
-      {num:'5',label:'Em Execução',color:'#005DAA'},
-      {num:'2',label:'Planejados',color:'#606770'}
+      {num:'0',label:'Marcos',color:'#00843D'},
+      {num:'0',label:'Próximos Passos',color:'#005DAA'},
+      {num:'0',label:'Riscos',color:'#606770'}
     ]
   },
   {
@@ -853,14 +838,14 @@ function renderProject(id){
 
   const prazoDisplay=p.id===6?'Ver etapas':p.prazo||'—';
 
-  const col1Title = (p.id === 0 || p.id === 2) ? 'Marcos' : 'O que foi feito';
-  const col2Title = (p.id === 0 || p.id === 2) ? 'Próximos passos' : 'O que está sendo feito';
-  const col3Title = (p.id === 0 || p.id === 2) ? 'Riscos' : 'O que será feito';
-  const col3Empty = (p.id === 0 || p.id === 2) ? '' : undefined;
+  const col1Title = 'Marcos';
+  const col2Title = 'Próximos passos';
+  const col3Title = 'Riscos';
+  const col3Empty = '';
 
-  const key1 = (p.id === 0 || p.id === 2) ? 'Marcos' : 'Entregues';
-  const key2 = (p.id === 0 || p.id === 2) ? 'Próximos Passos' : 'Em Execução';
-  const key3 = (p.id === 0 || p.id === 2) ? 'Riscos' : 'Planejados';
+  const key1 = 'Marcos';
+  const key2 = 'Próximos Passos';
+  const key3 = 'Riscos';
 
   const colsCount = p.id === 2 ? 8 : 7;
   const paddingStyle = p.id === 2 ? 'style="padding: 12px 6px;"' : '';
