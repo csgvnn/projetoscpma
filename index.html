@@ -408,9 +408,10 @@ const projects=[
     name:'Do Orçamento ao Resultado: LOA 2027 Orientada a Entregas',
     color:'#00843D',colorG:'#005C2B',colorL:'#E8F5EE',
     status:'wip',statusLabel:'Em Andamento',
-    progress:40,selo:null,prazo:'Agosto',
+    progress:null,selo:null,prazo:'Agosto',
     equipe:'SUPLAN',
     atualizacao:'23/07/2026',
+    atualizacaoHora:'14:53',
     objective:'Qualificar e alinhar as entregas governamentais com o orçamento e o planejamento estratégico do Estado.',
     done:[],
     doing:[],
@@ -426,9 +427,10 @@ const projects=[
     name:'Caderno de Valor Público',
     color:'#005DAA',colorG:'#003E73',colorL:'#E0ECF8',
     status:'wip',statusLabel:'Em Andamento',
-    progress:55,selo:null,prazo:'Junho',
+    progress:null,selo:null,prazo:'Junho',
     equipe:'GPMLP',
     atualizacao:'23/07/2026',
+    atualizacaoHora:'14:53',
     objective:'Assessorar a qualificação e otimização dos gastos das entregas governamentais com boletins periódicos.',
     done:[],
     doing:[],
@@ -499,12 +501,13 @@ const projects=[
     ]
   },
   {
-    id:4,name:'Universo SIPLAM no B.O.',
+    id:4,name:'Universo SIPLAM no B.O',
     color:'#DB2777',colorG:'#9D174D',colorL:'#FDF2F8',
     status:'wip',statusLabel:'Em Andamento',
-    progress:35,selo:'estruturante',prazo:'Julho',
+    progress:null,selo:'estruturante',prazo:'Julho',
     equipe:'SMA',
     atualizacao:'23/07/2026',
+    atualizacaoHora:'15:23',
     objective:'Integrar os dados do SIPLAM no Business Object para alinhamento em tempo real com a execução orçamentária.',
     obsEstrategica:null,
     done:[],
@@ -543,7 +546,7 @@ const projects=[
     id:6,name:'Desenvolvimento de sistemas',
     color:'#EA580C',colorG:'#9A3412',colorL:'#FFF7ED',
     status:'wip',statusLabel:'Em Andamento',
-    progress:50,selo:'inovacao',prazo:'—',
+    progress:null,selo:'inovacao',prazo:'—',
     equipe:'—',
     atualizacao:'23/07/2026',
     objective:'Desenvolver a plataforma integradora do planejamento estadual, substituindo o SIPLAM.',
@@ -771,7 +774,7 @@ function renderOverview(){
       <div class="proj-card-obj">${p.objective}</div>
       <div class="proj-card-bottom">
         <div class="proj-card-pct">
-          <span class="num">—</span>
+          <span class="num">${p.progress !== null && p.progress !== undefined ? p.progress + '%' : '—'}</span>
           <span class="lbl">evolução</span>
         </div>
         ${p.prazo?`<div><span style="display:inline-flex;align-items:center;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;padding:3px 9px;border-radius:99px;background:#E0ECF8;color:#003E73;">◷ ${p.prazo}</span></div>`:''}
@@ -888,14 +891,14 @@ function renderProject(id){
       <div class="proj-hero-visual">
         <img src="${img}" alt="${p.name}" onerror="this.parentElement.style.background='linear-gradient(135deg,${p.colorG},${p.color})'"/>
         <div class="proj-hero-visual-overlay" style="background:linear-gradient(90deg,${p.colorG} 0%,transparent 50%)"></div>
-        <div class="proj-pct-badge"><div class="pn">—</div><div class="pl">evolução</div></div>
+        <div class="proj-pct-badge"><div class="pn">${p.progress !== null && p.progress !== undefined ? p.progress + '%' : '—'}</div><div class="pl">evolução</div></div>
       </div>
     </div>
     <div class="proj-body">
       <div class="meta-bar" style="grid-template-columns: repeat(${colsCount}, 1fr);">
         ${p.id === 2 ? `<div class="meta-item" ${paddingStyle}><div class="meta-key">Ciclo</div><div class="meta-val" ${valFontSizeStyle}>5°</div></div>` : ''}
         <div class="meta-item" ${paddingStyle}><div class="meta-key">Status</div><div class="meta-val" style="font-size:14px;color:${p.color}">${p.statusLabel}</div></div>
-        <div class="meta-item" ${paddingStyle}><div class="meta-key">Evolução</div><div class="meta-val" style="color:var(--g-green); ${p.id === 2 ? 'font-size: 14px;' : ''}">—</div></div>
+        <div class="meta-item" ${paddingStyle}><div class="meta-key">Evolução</div><div class="meta-val" style="color:var(--g-green); ${p.id === 2 ? 'font-size: 14px;' : ''}">${p.progress !== null && p.progress !== undefined ? p.progress + '%' : '—'}</div></div>
         <div class="meta-item" ${paddingStyle}><div class="meta-key">${key1}</div><div class="meta-val" style="color:var(--g-green); ${p.id === 2 ? 'font-size: 14px;' : ''}">${p.done.length}</div></div>
         <div class="meta-item" ${paddingStyle}><div class="meta-key">${key2}</div><div class="meta-val" style="color:var(--g-blue); ${p.id === 2 ? 'font-size: 14px;' : ''}">${p.doing.length}</div></div>
         <div class="meta-item" ${paddingStyle}><div class="meta-key">${key3}</div><div class="meta-val" style="color:var(--muted); ${p.id === 2 ? 'font-size: 14px;' : ''}">${p.todo.length}</div></div>
@@ -970,15 +973,17 @@ function renderDashboard(){
     const c=p.status==='future'
       ?'linear-gradient(90deg,#606770,#404550)'
       :`linear-gradient(90deg,${p.color},${p.colorG})`;
+    const displayVal=p.progress !== null && p.progress !== undefined ? p.progress + '%' : '—';
+    const fillWidth=p.progress !== null && p.progress !== undefined ? p.progress : 0;
     let tipoBadge='';
     if(p.selo==='estruturante') tipoBadge=`<span class="bar-tipo" style="background:#FFF8D6;color:#7A6200;">★ Estruturante</span>`;
     else if(p.selo==='inovacao') tipoBadge=`<span class="bar-tipo" style="background:#E0ECF8;color:#003E73;">✦ Inovação</span>`;
     return`<div class="bar-row">
       <div class="bar-name" title="${p.name}">${p.name}</div>
       <div class="bar-track">
-        <div class="bar-fill" style="width:0%;background:${c}" data-target="0"></div>
+        <div class="bar-fill" style="width:0%;background:${c}" data-target="${fillWidth}"></div>
       </div>
-      <div class="bar-pct-label" style="color:${p.color}">—</div>
+      <div class="bar-pct-label" style="color:${p.color}">${displayVal}</div>
       ${tipoBadge}
     </div>`;
   }).join('');
