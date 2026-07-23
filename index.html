@@ -399,6 +399,7 @@ const projImages=[
   'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80',
   'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80',
   'atena.png',
+  'https://images.unsplash.com/photo-1450133064473-71024230f91b?w=800&q=80',
 ];
 
 const projects=[
@@ -408,18 +409,20 @@ const projects=[
     color:'#00843D',colorG:'#005C2B',colorL:'#E8F5EE',
     status:'wip',statusLabel:'Em Andamento',
     progress:40,selo:null,prazo:'Agosto',
+    equipe:'SUPLAN',
+    atualizacao:'23/07/2026',
     objective:'Qualificar e alinhar as entregas governamentais com o orçamento e o planejamento estratégico do Estado.',
     done:[
-      {text:'Adequações sistêmicas',btns:[makeLinkBtn({title:'Acessar Protótipo — Adequações Sistêmicas',tag:'Protótipo',tagColor:'#7C3AED',tagBg:'#EDE9FE',url:'https://incredible-boba-384d51.netlify.app/'})]},
-      {text:'Alinhamento com orçamento',btns:[]},
-      {text:'Definição dos eixos estratégicos',btns:[]},
-      {text:'Construção da pré-carteira de entregas',btns:[]}
+      {text:'Adequações sistêmicas',status:'done',btns:[makeLinkBtn({title:'Acessar Protótipo — Adequações Sistêmicas',tag:'Protótipo',tagColor:'#7C3AED',tagBg:'#EDE9FE',url:'https://incredible-boba-384d51.netlify.app/'})]},
+      {text:'Alinhamento com orçamento',status:'done',btns:[]},
+      {text:'Definição dos eixos estratégicos',status:'done',btns:[]},
+      {text:'Construção da pré-carteira de entregas',status:'done',btns:[]}
     ],
     doing:[
-      {text:'Portaria n.º 144/2026',btns:[makeLinkBtn({title:'Acessar Portaria n.º 144/2026',tag:'Portaria',tagColor:'#7A3F00',tagBg:'#FEF3C7',url:'https://goiasgovbr-my.sharepoint.com/personal/dacyana_farias_goias_gov_br/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fdacyana%5Ffarias%5Fgoias%5Fgov%5Fbr%2FDocuments%2FPortaria%20%2D%20GT%2Epdf&parent=%2Fpersonal%2Fdacyana%5Ffarias%5Fgoias%5Fgov%5Fbr%2FDocuments&ga=1'})]},
-      {text:'Capacitar setoriais',btns:[]},
-      {text:'Anexo de projeção de resultados da PLOA dos goianos 2027',btns:[]},
-      {text:'Prosseguir alinhamento entre planejamento, orçamento e setoriais',btns:[]}
+      {text:'Portaria n.º 144/2026',status:'wip',btns:[makeLinkBtn({title:'Acessar Portaria n.º 144/2026',tag:'Portaria',tagColor:'#7A3F00',tagBg:'#FEF3C7',url:'https://goiasgovbr-my.sharepoint.com/personal/dacyana_farias_goias_gov_br/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fdacyana%5Ffarias%5Fgoias%5Fgov%5Fbr%2FDocuments%2FPortaria%20%2D%20GT%2Epdf&parent=%2Fpersonal%2Fdacyana%5Ffarias%5Fgoias%5Fgov%5Fbr%2FDocuments&ga=1'})]},
+      {text:'Capacitar setoriais',status:'wip',btns:[]},
+      {text:'Anexo de projeção de resultados da PLOA dos goianos 2027',status:'wip',btns:[]},
+      {text:'Prosseguir alinhamento entre planejamento, orçamento e setoriais',status:'wip',btns:[]}
     ],
     todo:[],
     indicators:[
@@ -434,49 +437,52 @@ const projects=[
     color:'#005DAA',colorG:'#003E73',colorL:'#E0ECF8',
     status:'wip',statusLabel:'Em Andamento',
     progress:55,selo:null,prazo:'Junho',
+    equipe:'GPMLP',
+    atualizacao:'23/07/2026',
     objective:'Assessorar a qualificação e otimização dos gastos das entregas governamentais com boletins periódicos.',
     done:[
-      {text:'Protótipo do painel de análise de custeio desenvolvido a partir de uma base de dados estruturada em Excel.',btns:[]},
-      {text:'Revisão de Metas',btns:[
+      {text:'Protótipo do painel de análise de custeio desenvolvido a partir de uma base de dados estruturada em Excel.',status:'done',btns:[]},
+      {text:'Revisão de Metas',status:'done',btns:[
         makeLinkBtn({title:'Sistema de Revisão de Metas',tag:'Sistema',tagColor:'#1D4ED8',tagBg:'#DBEAFE',url:'https://revisaoppa2026.lovable.app/qualidade'}),
         makeLinkBtn({title:'Caderno de Metas',tag:'Documento',tagColor:'#005C2B',tagBg:'#E8F5EE',url:'https://online.fliphtml5.com/kwdyd/hcam/#p=1'})
       ]}
     ],
-    doing:[{text:'Desenvolvimento do painel de análise de custeio',btns:[
+    doing:[{text:'Desenvolvimento do painel de análise de custeio',status:'wip',btns:[
       makeLinkBtn({title:'Acessar Protótipo — Análise de Custeio',tag:'Protótipo',tagColor:'#7C3AED',tagBg:'#EDE9FE',url:'https://jolly-tapioca-db37c7.netlify.app/'})
     ]}],
     todo:[
-      {text:'Automação e geração de boletins periódicos',btns:[]},
-      {text:'Calibragem físico x financeiro',btns:[]}
+      {text:'Automação e geração de boletins periódicos',status:'todo',btns:[]},
+      {text:'Calibragem físico x financeiro',status:'todo',btns:[]}
     ],
     indicators:[
-      {num:'2',label:'Entregues',color:'#00843D'},
-      {num:'1',label:'Em Execução',color:'#005DAA'},
-      {num:'2',label:'Planejados',color:'#606770'}
+      {num:'2',label:'Marcos',color:'#00843D'},
+      {num:'1',label:'Próximos Passos',color:'#005DAA'},
+      {num:'2',label:'Riscos',color:'#606770'}
     ]
   },
   {
     id:2,name:'Relatório de Entregas Governamentais',
-    color:'#00843D',colorG:'#005C2B',colorL:'#E8F5EE',
+    color:'#7C3AED',colorG:'#5B21B6',colorL:'#F5F3FF',
     status:'wip',statusLabel:'Em Andamento',
     progress:70,selo:null,prazo:'Julho',
     equipe:'GEMONIT',
+    atualizacao:'23/07/2026',
     objective:'Documentar e publicar relatórios e e-books quadrimestrais de acompanhamento das entregas do Estado.',
     done:[
-      {text:'Abertura Ciclo c/ as Pastas - 11/05', status:'done', btns:[]},
-      {text:'Acompanhamento c/ as Pastas - 16/06', status:'done', btns:[]},
-      {text:'Consolidação e Validação Conteúdo por Eixo', status:'late', btns:[]},
-      {text:'Diagramação/Layout EBOOK 28/07', status:'wip', btns:[]},
-      {text:'Envio SEI - Relatório Final aos Secretários 29/07', status:'todo', btns:[]}
+      {text:'Abertura Ciclo c/ pastas - 11/05', status:'done', btns:[]},
+      {text:'Acompanhamento c/ as pastas - 16/06', status:'done', btns:[]},
+      {text:'Consolidação e validação dos conteúdos por eixo', status:'late', btns:[]},
+      {text:'Diagramação/Layout', status:'wip', btns:[]},
+      {text:'Envio SEI aos secretários - 29/07', status:'todo', btns:[]}
     ],
     doing:[
-      {text:'Consolidação e Validação dos Eixos - Previsão<br><small style="opacity: 0.85; font-weight: 500; font-size: 11px;">Concluídos: Eixo VIII e IX &nbsp;|&nbsp; 22/07: Eixo II &nbsp;|&nbsp; 23/07: Eixos: I, VI, VII e X &nbsp;|&nbsp; 27/07: Eixos III, IV e V</small>', status:'late', btns:[]},
-      {text:'Finalização Diagramação/Layout - Previsão<br><small style="opacity: 0.85; font-weight: 500; font-size: 11px;">Concluídos: Eixo VIII e IX &nbsp;|&nbsp; 27/07: Eixos I, II, VI, VII e X &nbsp;|&nbsp; 28/07: Eixos III, IV e V</small>', status:'wip', btns:[]},
-      {text:'Envio Relatório Final aos Secretários - Prev. 29/07', status:'todo', btns:[]}
+      {text:'Consolidação e validação dos eixos', status:'late', btns:[]},
+      {text:'Finalização diagramação/layout', status:'wip', btns:[]},
+      {text:'Envio relatório final aos secretários', status:'todo', btns:[]}
     ],
     todo:[
-      {text:'Atrasos no Validação e Consolidação EBOOK', status:'blocked', btns:[]},
-      {text:'Alinhamento com Comunicação Setorial/Restrição Eleição', status:'todo', btns:[]}
+      {text:'Atrasos na validação e consolidação do ebook', status:'blocked', btns:[]},
+      {text:'Alinhamento com a comunicação setorial/restrição eleitoral', status:'todo', btns:[]}
     ],
     indicators:[
       {num:'5',label:'Marcos',color:'#00843D'},
@@ -486,76 +492,84 @@ const projects=[
   },
   {
     id:3,name:'Inteligência do Planejamento',
-    color:'#005DAA',colorG:'#003E73',colorL:'#E0ECF8',
+    color:'#991B1B',colorG:'#7F1D1D',colorL:'#FEF2F2',
     status:'wip',statusLabel:'Em Andamento',
-    progress:60,selo:null,prazo:'Agosto',
+    progress:60,selo:null,prazo:'—',
+    equipe:'GAPP',
+    atualizacao:'23/07/2026',
     objective:'Desenvolver painéis analíticos de monitoramento e indicadores para tomada de decisão governamental.',
     done:[
-      {text:'Painel do Planejamento Governamental',btns:[makeLinkBtn({title:'Painel do Planejamento Estadual',tag:'Power BI',tagColor:'#003E73',tagBg:'#E0ECF8',url:'https://app.powerbi.com/reportEmbed?reportId=8e365b6c-ac6d-4e54-b9f4-3f61b4830392&autoAuth=true&ctid=67fd431c-b2ad-4867-81bc-d756220b56d4'})]},
-      {text:'Painel de Indicadores Socioeconômicos',btns:[makeLinkBtn({title:'Indicadores Socioeconômicos',tag:'Big Data',tagColor:'#003E73',tagBg:'#E0ECF8',url:'https://bigdataestadual.sistemas.go.gov.br/Login/Inicio?ReturnUrl=%2fPrincipal%2fInicioIntranet'})]},
-      {text:'Painel de Entregas Governamentais',btns:[makeLinkBtn({title:'Entregas do Governo de Goiás',tag:'Painel Público',tagColor:'#003E73',tagBg:'#E0ECF8',url:'https://abre.go.gov.br/bigeceg'})]}
+      {text:'BI GECEG - 30/04', status:'done', btns:[makeLinkBtn({title:'Painel do Planejamento Estadual',tag:'Power BI',tagColor:'#003E73',tagBg:'#E0ECF8',url:'https://app.powerbi.com/reportEmbed?reportId=8e365b6c-ac6d-4e54-b9f4-3f61b4830392&autoAuth=true&ctid=67fd431c-b2ad-4867-81bc-d756220b56d4'})]},
+      {text:'BI Planejamento Governamental 2024/2027 - Prev. 17/08', status:'blocked', btns:[makeLinkBtn({title:'Indicadores Socioeconômicos',tag:'Big Data',tagColor:'#003E73',tagBg:'#E0ECF8',url:'https://bigdataestadual.sistemas.go.gov.br/Login/Inicio?ReturnUrl=%2fPrincipal%2fInicioIntranet'})]},
+      {text:'BI Governança do Monitoramento - Prev. 29/09', status:'todo', btns:[makeLinkBtn({title:'Entregas do Governo de Goiás',tag:'Painel Público',tagColor:'#003E73',tagBg:'#E0ECF8',url:'https://abre.go.gov.br/bigeceg'})]},
+      {text:'BI Radar de Desempenho do Planejamento Governamental (RDPG) - Prev. 21/11', status:'todo', btns:[makeLinkBtn({title:'Acessar Protótipo — Radar de Desempenho',tag:'Protótipo',tagColor:'#7C3AED',tagBg:'#EDE9FE',url:'https://eloquent-mooncake-754edf.netlify.app/'})]}
     ],
     doing:[
-      {text:'Reestruturação do Painel do Planejamento',btns:[]},
-      {text:'Monitoramento dos Indicadores das Iniciativas do PPA',btns:[makeLinkBtn({title:'Acessar Protótipo — Indicadores das Iniciativas',tag:'Protótipo',tagColor:'#7C3AED',tagBg:'#EDE9FE',url:'https://euphonious-trifle-b7492f.netlify.app/'})]},
-      {text:'Painel de Análise de Custeio',btns:[makeLinkBtn({title:'Acessar Protótipo — Análise de Custeio',tag:'Protótipo',tagColor:'#7C3AED',tagBg:'#EDE9FE',url:'https://jolly-tapioca-db37c7.netlify.app/'})]}
+      {text:'BI Planejamento Governamental', status:'wip', btns:[makeLinkBtn({title:'Acessar Protótipo — Análise de Custeio',tag:'Protótipo',tagColor:'#7C3AED',tagBg:'#EDE9FE',url:'https://jolly-tapioca-db37c7.netlify.app/'})]},
+      {text:'BI Planejamento Gov. - Implementação das alterações - Prev. 07/08', status:'blocked', btns:[]},
+      {text:'BI Planejamento Gov. - Homologação das atualizações - Prev. 11/08', status:'todo', btns:[]},
+      {text:'BI Planejamento Gov. - Ajustes BI - Prev 13/08', status:'todo', btns:[]},
+      {text:'BI Planejamento Gov. - Homologação final - Prev. 14/08', status:'todo', btns:[]},
+      {text:'BI Planejamento Gov. - Publicar BI no Big Data - Prev. 17/08', status:'todo', btns:[]}
     ],
     todo:[
-      {text:'Painel de Governança do Monitoramento',btns:[]},
-      {text:'Painel de Indicadores de Resultados do PPA',btns:[]},
-      {text:'Painel Radar de Desempenho do Planejamento Governamental',btns:[makeLinkBtn({title:'Acessar Protótipo — Radar de Desempenho',tag:'Protótipo',tagColor:'#7C3AED',tagBg:'#EDE9FE',url:'https://eloquent-mooncake-754edf.netlify.app/'})]},
-      {text:'Caderno de Valor Público',btns:[makeLinkBtn({title:'Acessar Protótipo — Caderno de Valor Público',tag:'Protótipo',tagColor:'#7C3AED',tagBg:'#EDE9FE',url:'https://view.genially.com/68593e7192663ecceba4b412'})]}
+      {text:'Atrasos no BI Planejamento Governamental (Falta de equipe)', status:'blocked', btns:[]},
+      {text:'Atraso na disponibilização dos dados do SIPLAM no BO (Projeto BO)', status:'blocked', btns:[]}
     ],
     indicators:[
-      {num:'3',label:'Painéis Entregues',color:'#00843D'},
-      {num:'3',label:'Em Desenvolvimento',color:'#005DAA'},
-      {num:'4',label:'Planejados',color:'#606770'}
+      {num:'4',label:'Marcos',color:'#00843D'},
+      {num:'6',label:'Próximos Passos',color:'#005DAA'},
+      {num:'2',label:'Riscos',color:'#606770'}
     ]
   },
   {
     id:4,name:'Universo SIPLAM no B.O.',
-    color:'#C9A400',colorG:'#7A6200',colorL:'#FFF8D6',
+    color:'#DB2777',colorG:'#9D174D',colorL:'#FDF2F8',
     status:'wip',statusLabel:'Em Andamento',
     progress:35,selo:'estruturante',prazo:'Julho',
+    equipe:'SMA',
+    atualizacao:'23/07/2026',
     objective:'Integrar os dados do SIPLAM no Business Object para alinhamento em tempo real com a execução orçamentária.',
     obsEstrategica:'Os projetos de LOA 2027 orientada a entregas, Análise da Qualidade do Gasto e Relatório de Entregas Governamentais possuem dependência direta do desenvolvimento e implantação do Universo SIPLAM no B.O. para viabilizar suas automações.',
-    done:[{text:'Ficha conceitual',btns:[]}],
-    doing:[{text:'Implementação',btns:[]}],
-    todo:[
-      {text:'Validação e testes',btns:[]},
-      {text:'Produção',btns:[]}
-    ],
+    done:[],
+    doing:[],
+    todo:[],
     indicators:[
-      {num:'1',label:'Entregue',color:'#00843D'},
-      {num:'1',label:'Em Execução',color:'#005DAA'},
-      {num:'2',label:'Planejados',color:'#606770'}
+      {num:'0',label:'Marcos',color:'#00843D'},
+      {num:'0',label:'Próximos Passos',color:'#005DAA'},
+      {num:'0',label:'Riscos',color:'#606770'}
     ]
   },
   {
     id:5,name:'Novo PPA 2028-2031',
-    color:'#FFD100',colorG:'#7A6200',colorL:'#FFF8D6',
-    status:'future',statusLabel:'Planejado',
+    color:'#4338CA',colorG:'#312E81',colorL:'#EEF2FF',
+    status:'future',statusLabel:'Em Planejamento',
     progress:0,selo:'futuro',prazo:'Dezembro',
+    equipe:'SUPLAN',
+    atualizacao:'23/07/2026',
     objective:'Desenvolver a metodologia e o sistema do Plano Plurianual 2028-2031 e do Novo SIPLAM.',
-    done:[],doing:[],
-    todo:[
-      {text:'Benchmarking das abordagens do PPA',btns:[]},
-      {text:'Estruturação metodológica',btns:[]},
-      {text:'Desenvolvimento do sistema',btns:[]},
-      {text:'Simulação com órgão piloto',btns:[]},
-      {text:'NOVO SIPLAM',btns:[]}
+    done:[
+      {text:'Benchmarking das abordagens do PPA',status:'todo',btns:[]},
+      {text:'Estruturação metodológica',status:'todo',btns:[]},
+      {text:'Desenvolvimento do sistema',status:'todo',btns:[]},
+      {text:'Simulação com órgão piloto',status:'todo',btns:[]},
+      {text:'Novo SIPLAM',status:'todo',btns:[]}
     ],
+    doing:[],
+    todo:[],
     indicators:[
-      {num:'0',label:'Entregue',color:'#00843D'},
-      {num:'0',label:'Em Execução',color:'#005DAA'},
-      {num:'5',label:'Planejados',color:'#606770'}
+      {num:'5',label:'Marcos',color:'#00843D'},
+      {num:'0',label:'Próximos Passos',color:'#005DAA'},
+      {num:'0',label:'Riscos',color:'#606770'}
     ]
   },
   {
     id:6,name:'Desenvolvimento de sistemas',
-    color:'#005DAA',colorG:'#003E73',colorL:'#E0ECF8',
+    color:'#EA580C',colorG:'#9A3412',colorL:'#FFF7ED',
     status:'wip',statusLabel:'Em Andamento',
-    progress:50,selo:'inovacao',prazo:'Variável',
+    progress:50,selo:'inovacao',prazo:'—',
+    equipe:'—',
+    atualizacao:'23/07/2026',
     objective:'Desenvolver a plataforma integradora do planejamento estadual, substituindo o SIPLAM.',
     done:[],
     doing:[],
@@ -568,45 +582,66 @@ const projects=[
   },
   {
     id:7,name:'O que está sendo entregue com seu dinheiro?',
-    color:'#00843D',colorG:'#005C2B',colorL:'#E8F5EE',
-    status:'future',statusLabel:'Planejado',
-    progress:0,selo:'futuro',prazo:null,
+    color:'#E11D48',colorG:'#9F1239',colorL:'#FFF1F2',
+    status:'future',statusLabel:'Em Planejamento',
+    progress:0,selo:'futuro',prazo:'—',
+    equipe:'SCPMA',
+    atualizacao:'23/07/2026',
     objective:'Comunicar de forma acessível como os recursos públicos são aplicados em formato audiovisual.',
-    done:[],doing:[],
-    todo:[{text:'Projeto de comunicação pública em formato podcast',btns:[makeLinkBtn({title:'Acessar Protótipo — Podcast',tag:'Protótipo',tagColor:'#7C3AED',tagBg:'#EDE9FE',url:'https://claude.ai/public/artifacts/48df8c3b-50d4-425b-9fac-f38e7966e228'})]}],
+    done:[
+      {text:'Protótipo do projeto de comunicação pública em formato podcast',status:'todo',btns:[makeLinkBtn({title:'Acessar Protótipo — Podcast',tag:'Protótipo',tagColor:'#7C3AED',tagBg:'#EDE9FE',url:'https://claude.ai/public/artifacts/48df8c3b-50d4-425b-9fac-f38e7966e228'})]}
+    ],
+    doing:[],
+    todo:[],
     indicators:[
-      {num:'0',label:'Entregue',color:'#00843D'},
-      {num:'0',label:'Em Execução',color:'#005DAA'},
-      {num:'1',label:'Planejado',color:'#606770'}
+      {num:'1',label:'Marcos',color:'#00843D'},
+      {num:'0',label:'Próximos Passos',color:'#005DAA'},
+      {num:'0',label:'Riscos',color:'#606770'}
     ]
   },
   {
     id:8,name:'ATENA - Assistente virtual',
-    color:'#005DAA',colorG:'#003E73',colorL:'#E0ECF8',
+    color:'#8B5CF6',colorG:'#7C3AED',colorL:'#F5F3FF',
     status:'wip',statusLabel:'Em Andamento',
     progress:80,selo:'inovacao',prazo:'Agosto',
+    equipe:'SCPMA',
+    atualizacao:'23/07/2026',
     objective:'Otimizar o atendimento aos usuários da Rede de Planejamento com inteligência artificial via WhatsApp.',
     done:[
-      {text:'Integração de IA e WhatsApp',btns:[]},
-      {text:'Estruturação de menus e fluxos',btns:[]},
-      {text:'Roteamento de chamados com SLA',btns:[]},
-      {text:'Painel web de resolução',btns:[]},
-      {text:'Relatórios e métricas de satisfação',btns:[]}
+      {text:'Conexão com whatsapp',status:'todo',btns:[]},
+      {text:'Integração da IA (Gemini API) com leitura de manuais locais (RAG)',status:'todo',btns:[]},
+      {text:'Desenho de menus e cadastro único de usuários concluídos',status:'todo',btns:[]},
+      {text:'Vinculação com email institucional',status:'todo',btns:[]},
+      {text:'Possibilidade de utilizar outro sistema para melhor atualização e segurança',status:'todo',btns:[]},
+      {text:'Lançamento oficial',status:'todo',btns:[]}
     ],
     doing:[
-      {text:'Testes de homologação e usabilidade',btns:[]},
-      {text:'Revisão da base de conhecimento',btns:[]},
-      {text:'Validação de e-mails institucionais',btns:[]}
+      {text:'Definir fluxo de conversa',status:'wip',btns:[]},
+      {text:'Definir data disponível para reunir com a TI para apresentar o projeto',status:'wip',btns:[]},
+      {text:'Homologação e refino das respostas da IA',status:'todo',btns:[]}
     ],
-    todo:[
-      {text:'Hospedagem em servidor de produção',btns:[]},
-      {text:'Migração para banco de dados relacional',btns:[]},
-      {text:'Lançamento oficial e divulgação',btns:[]}
-    ],
+    todo:[],
     indicators:[
-      {num:'5',label:'Entregues',color:'#00843D'},
-      {num:'3',label:'Em Desenvolvimento',color:'#005DAA'},
-      {num:'3',label:'Planejados',color:'#606770'}
+      {num:'6',label:'Marcos',color:'#00843D'},
+      {num:'3',label:'Próximos Passos',color:'#005DAA'},
+      {num:'0',label:'Riscos',color:'#606770'}
+    ]
+  },
+  {
+    id:9,name:'Qualificação das entregas e do gasto público',
+    color:'#9333EA',colorG:'#7E22CE',colorL:'#F5F3FF',
+    status:'wip',statusLabel:'Em Andamento',
+    progress:0,selo:null,prazo:'—',
+    equipe:'SUPLAN',
+    atualizacao:'23/07/2026',
+    objective:'Qualificar as entregas governamentais e promover a eficiência do gasto público.',
+    done:[],
+    doing:[],
+    todo:[],
+    indicators:[
+      {num:'0',label:'Marcos',color:'#00843D'},
+      {num:'0',label:'Próximos Passos',color:'#005DAA'},
+      {num:'0',label:'Riscos',color:'#606770'}
     ]
   }
 ];
@@ -641,7 +676,6 @@ function buildSidebar(){
     return `<button class="sb-btn ${active}" onclick="openProject(${item.projId})" title="${item.label}">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">${item.icon}</svg>
       <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;text-align:left;">${item.label}</span>
-      <span class="sb-btn-dot" style="background:${item.color}"></span>
     </button>`;
   }).join('');
   document.getElementById('sbNav').innerHTML=html;
@@ -931,7 +965,7 @@ function renderProject(id){
       </div>
       <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;">
         <div>Central de Projetos · Central de Monitoramento</div>
-        <div>Ultima atualização: 00/00/2026</div>
+        <div>Última atualização: ${p.atualizacao || '00/00/2026'}</div>
       </div>
     </div>
   </div>`;
