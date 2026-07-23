@@ -399,7 +399,7 @@ const projImages=[
   'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80',
   'https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80',
   'atena.png',
-  'https://images.unsplash.com/photo-1450133064473-71024230f91b?w=800&q=80',
+  'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=80',
 ];
 
 const projects=[
@@ -474,8 +474,9 @@ const projects=[
     color:'#991B1B',colorG:'#7F1D1D',colorL:'#FEF2F2',
     status:'wip',statusLabel:'Em Andamento',
     progress:60,selo:null,prazo:'—',
-    equipe:'GAPP',
+    equipe:'GAPPP',
     atualizacao:'23/07/2026',
+    atualizacaoHora:'14:53',
     objective:'Desenvolver painéis analíticos de monitoramento e indicadores para tomada de decisão governamental.',
     done:[
       {text:'BI GECEG - 30/04', status:'done', btns:[]},
@@ -485,11 +486,7 @@ const projects=[
     ],
     doing:[
       {text:'BI Planejamento Governamental', status:'wip', btns:[]},
-      {text:'BI Planejamento Gov. - Implementação das alterações - Prev. 07/08', status:'blocked', btns:[]},
-      {text:'BI Planejamento Gov. - Homologação das atualizações - Prev. 11/08', status:'todo', btns:[]},
-      {text:'BI Planejamento Gov. - Ajustes BI - Prev 13/08', status:'todo', btns:[]},
-      {text:'BI Planejamento Gov. - Homologação final - Prev. 14/08', status:'todo', btns:[]},
-      {text:'BI Planejamento Gov. - Publicar BI no Big Data - Prev. 17/08', status:'todo', btns:[]}
+      {text:'BI Planejamento Gov. - Implementação das alterações - Prev. 07/08<ul style="margin: 8px 0 0 16px; padding: 0; list-style-type: none; font-size: 11px; color: #4B5563; line-height: 1.6; font-weight: normal;"><li style="position: relative; padding-left: 12px; margin-bottom: 4px;"><span style="position: absolute; left: 0; top: 7px; width: 4px; height: 4px; border-radius: 50%; background: #374151;"></span>Homologação das atualizações - Prev. 11/08</li><li style="position: relative; padding-left: 12px; margin-bottom: 4px;"><span style="position: absolute; left: 0; top: 7px; width: 4px; height: 4px; border-radius: 50%; background: #374151;"></span>Ajustes BI - Prev 13/08</li><li style="position: relative; padding-left: 12px; margin-bottom: 4px;"><span style="position: absolute; left: 0; top: 7px; width: 4px; height: 4px; border-radius: 50%; background: #374151;"></span>Homologação final - Prev. 14/08</li><li style="position: relative; padding-left: 12px;"><span style="position: absolute; left: 0; top: 7px; width: 4px; height: 4px; border-radius: 50%; background: #374151;"></span>Publicar BI no Big Data - Prev. 17/08</li></ul>', status:'blocked', btns:[]}
     ],
     todo:[
       {text:'Atrasos no BI Planejamento Governamental (Falta de equipe)', status:'blocked', btns:[]},
@@ -497,7 +494,7 @@ const projects=[
     ],
     indicators:[
       {num:'4',label:'Marcos',color:'#00843D'},
-      {num:'6',label:'Próximos Passos',color:'#005DAA'},
+      {num:'2',label:'Próximos Passos',color:'#005DAA'},
       {num:'2',label:'Riscos',color:'#606770'}
     ]
   },
@@ -608,11 +605,12 @@ const projects=[
   },
   {
     id:9,name:'Qualificação das entregas e do gasto público',
-    color:'#9333EA',colorG:'#7E22CE',colorL:'#F5F3FF',
+    color:'#0D9488',colorG:'#0F766E',colorL:'#F0FDFA',
     status:'wip',statusLabel:'Em Andamento',
     progress:0,selo:null,prazo:'—',
     equipe:'SUPLAN',
     atualizacao:'23/07/2026',
+    atualizacaoHora:'14:53',
     objective:'Qualificar as entregas governamentais e promover a eficiência do gasto público.',
     done:[],
     doing:[],
@@ -942,9 +940,8 @@ function renderProject(id){
           </div>
         </div>
       </div>
-      <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;">
-        <div>Central de Projetos · Central de Monitoramento</div>
-        <div>Última atualização: ${p.atualizacao || '00/00/2026'}</div>
+      <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: center; align-items: center; font-size: 11px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;">
+        <div>Última atualização: ${p.atualizacao || '23/07/2026'} às ${p.atualizacaoHora || '14:53'}</div>
       </div>
     </div>
   </div>`;
