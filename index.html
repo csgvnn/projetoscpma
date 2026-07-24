@@ -193,11 +193,12 @@ body.sidebar-hidden .main{margin-left:0!important;}
 .filter-pill:hover{border-color:var(--muted);color:var(--deep);background:var(--soft);}
 .filter-pill.active{border-color:var(--deep);background:var(--soft);color:var(--deep);box-shadow:0 2px 8px rgba(0,0,0,0.04);}
 .filter-pill .dot{width:7px;height:7px;border-radius:50%;}
-.filter-pill .dot.wip{background:#005DAA;}
-.filter-pill .dot.done{background:#00843D;}
+.filter-pill .dot.wip{background:#00843D;}
+.filter-pill .dot.done{background:#005DAA;}
 .filter-pill .dot.late{background:#E4002B;}
-.filter-pill .dot.blocked{background:#FFD100;}
-.filter-pill .dot.todo{background:#080808;}
+.filter-pill .dot.blocked{background:#EA580C;}
+.filter-pill .dot.paused{background:#C9A400;}
+.filter-pill .dot.cancelled{background:#080808;}
 .cronograma-list{display:flex;flex-direction:column;gap:6px;margin-top:10px;}
 .crono-item{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--deep);font-weight:500;}
 .crono-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
@@ -812,11 +813,13 @@ function renderProject(id){
     return items.map(item=>{
       const status = item.status || colStatus;
       const map = {
-        done: ['#00843D','#F4FAF6','✓'],
-        wip:  ['#005DAA','#EDF3FA','→'],
-        late: ['#E4002B','#FDF2F4','!'],
-        todo: ['#080808','#F4F7F7','◦'],
-        blocked: ['#C9A400','#FFF8D6','⚠']
+        wip:       ['#00843D','#E8F5EE','→'],
+        done:      ['#005DAA','#E0ECF8','✓'],
+        late:      ['#E4002B','#FDF2F4','!'],
+        blocked:   ['#EA580C','#FFF5ED','?'],
+        paused:    ['#C9A400','#FFF8D6','⏸'],
+        cancelled: ['#080808','#F5F5F5','✕'],
+        todo:      ['#00843D','#E8F5EE','→']
       };
       const [color, bg, marker] = map[status] || [defaultColor, defaultBg, defaultMarker];
 
@@ -910,28 +913,29 @@ function renderProject(id){
       <div>
         <div class="section-label">Etapas do Projeto</div>
         <div class="project-filters">
-          <button class="filter-pill" onclick="toggleProjectFilter(this, 'wip')"><span class="dot wip"></span>Em andamento</button>
+          <button class="filter-pill" onclick="toggleProjectFilter(this, 'wip')"><span class="dot wip"></span>No prazo</button>
           <button class="filter-pill" onclick="toggleProjectFilter(this, 'done')"><span class="dot done"></span>Concluído</button>
           <button class="filter-pill" onclick="toggleProjectFilter(this, 'late')"><span class="dot late"></span>Atrasado</button>
-          <button class="filter-pill" onclick="toggleProjectFilter(this, 'blocked')"><span class="dot blocked"></span>Entraves</button>
-          <button class="filter-pill" onclick="toggleProjectFilter(this, 'todo')"><span class="dot todo"></span>Não iniciado</button>
+          <button class="filter-pill" onclick="toggleProjectFilter(this, 'blocked')"><span class="dot blocked"></span>Entrave</button>
+          <button class="filter-pill" onclick="toggleProjectFilter(this, 'paused')"><span class="dot paused"></span>Paralisado</button>
+          <button class="filter-pill" onclick="toggleProjectFilter(this, 'cancelled')"><span class="dot cancelled"></span>Cancelado</button>
         </div>
         <div class="three-cols-pres">
           <div class="col-pres">
             <div class="col-pres-head">
-              <div class="col-head-stripe" style="background:#00843D"></div>
+              <div class="col-head-stripe" style="background:#005DAA"></div>
               <div class="col-head-title">${col1Title}</div>
-              <div class="col-head-count" style="background:#E8F5EE;color:#005C2B">${p.done.length}</div>
+              <div class="col-head-count" style="background:#E0ECF8;color:#003E73">${p.done.length}</div>
             </div>
-            <div class="col-pres-body">${colItems(p.done,'#00843D','#F4FAF6','✓',undefined,'done')}</div>
+            <div class="col-pres-body">${colItems(p.done,'#005DAA','#E0ECF8','✓',undefined,'done')}</div>
           </div>
           <div class="col-pres">
             <div class="col-pres-head">
-              <div class="col-head-stripe" style="background:#005DAA"></div>
+              <div class="col-head-stripe" style="background:#00843D"></div>
               <div class="col-head-title">${col2Title}</div>
-              <div class="col-head-count" style="background:#E0ECF8;color:#003E73">${p.doing.length}</div>
+              <div class="col-head-count" style="background:#E8F5EE;color:#005C2B">${p.doing.length}</div>
             </div>
-            <div class="col-pres-body">${colItems(p.doing,'#005DAA','#EDF3FA','→',undefined,'wip')}</div>
+            <div class="col-pres-body">${colItems(p.doing,'#00843D','#E8F5EE','→',undefined,'wip')}</div>
           </div>
           <div class="col-pres">
             <div class="col-pres-head">
@@ -939,7 +943,7 @@ function renderProject(id){
               <div class="col-head-title">${col3Title}</div>
               <div class="col-head-count" style="background:#F4F7F7;color:#606770">${p.todo.length}</div>
             </div>
-            <div class="col-pres-body">${colItems(p.todo,'#606770','#F4F7F7','◦',col3Empty,'todo')}</div>
+            <div class="col-pres-body">${colItems(p.todo,'#606770','#F4F7F7','→',col3Empty,'todo')}</div>
           </div>
         </div>
       </div>
