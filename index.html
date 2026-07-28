@@ -109,7 +109,7 @@ body.sidebar-hidden .main{margin-left:0!important;}
 .slide-h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(30px,4vw,48px);font-weight:900;color:var(--deep);letter-spacing:-0.01em;text-transform:uppercase;line-height:1;margin-bottom:6px;}
 .slide-sub{font-size:14px;color:var(--muted);line-height:1.6;max-width:680px;margin-bottom:6px;}
 .slide-grad-line{height:6px;width:min(500px,60%);border-radius:8px;background:linear-gradient(90deg,var(--g-green),var(--g-yellow),var(--g-blue),rgba(255,255,255,0));margin-bottom:34px;}
-.summary-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:38px;}
+.summary-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;margin-bottom:38px;}
 .sum-card{background:#fff;border-radius:18px;padding:26px 22px;border:1px solid var(--line);box-shadow:0 4px 16px rgba(0,0,0,0.05);position:relative;overflow:hidden;transition:transform 0.2s;}
 .sum-card:hover{transform:translateY(-3px);}
 .sum-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--sc,var(--g-green));}
@@ -132,6 +132,7 @@ body.sidebar-hidden .main{margin-left:0!important;}
 .sb-wip{background:#E8F5EE;color:var(--g-green-d);}
 .sb-future{background:var(--g-yellow-l);color:var(--g-yellow-d);}
 .sb-done{background:var(--g-blue-l);color:var(--g-blue-d);}
+.sb-paused{background:#FFF8D6;color:#C9A400;}
 .slide-proj{background:#ffffff;}
 .proj-nav-bar{padding:18px 52px 0;display:flex;align-items:center;justify-content:space-between;}
 .back-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:99px;border:1px solid var(--line);background:#fff;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:0.04em;cursor:pointer;transition:all 0.2s;color:var(--muted);}
@@ -214,6 +215,7 @@ body.sidebar-hidden .main{margin-left:0!important;}
 .pill{display:inline-flex;align-items:center;gap:5px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;padding:4px 12px;border-radius:99px;}
 .pill-wip{background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.25);}
 .pill-future{background:rgba(255,209,0,0.15);color:#FFD100;border:1px solid rgba(255,209,0,0.3);}
+.pill-paused{background:rgba(255,209,0,0.15);color:#FFD100;border:1px solid rgba(255,209,0,0.3);}
 .pill-dot{width:5px;height:5px;border-radius:50%;background:currentColor;}
 .selo{display:inline-flex;align-items:center;gap:5px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;padding:4px 12px;border-radius:99px;}
 .selo-e{background:rgba(255,209,0,0.15);color:#FFD100;border:1px solid rgba(255,209,0,0.3);}
@@ -221,7 +223,7 @@ body.sidebar-hidden .main{margin-left:0!important;}
 .selo-f{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.15);}
 .slide-dash{background:#ffffff;}
 .dash-section{padding:44px 52px;flex:1;}
-.dash-kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-bottom:32px;}
+.dash-kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:18px;margin-bottom:32px;}
 .dash-kpi{background:#fff;border-radius:18px;padding:26px 22px;border:1px solid var(--line);box-shadow:0 2px 10px rgba(0,0,0,0.04);position:relative;overflow:hidden;transition:transform 0.2s;}
 .dash-kpi:hover{transform:translateY(-2px);}
 .dash-kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--kc,var(--g-green));}
@@ -681,6 +683,38 @@ const projects=[
       {num:'0',label:'Próximos Passos',color:'#005DAA'},
       {num:'0',label:'Pontos de Atenção - Riscos',color:'#606770'}
     ]
+  },
+  {
+    id:10,name:'Plano de Médio e Longo Prazo',
+    color:'#475569',colorG:'#334155',colorL:'#F1F5F9',
+    status:'paused',statusLabel:'Paralisado',
+    progress:null,selo:null,prazo:'—',
+    equipe:'SUPLAN',
+    atualizacao:'28/07/2026',
+    atualizacaoHora:'14:19',
+    objective:'Estruturar e viabilizar a metodologia para a formulação do planejamento de médio e longo prazo do Estado.',
+    done:[
+      {text:'Projeto estruturado em 2024 - Paralisado após troca de titularidade - já havia sido assinado pela Funape', status:'done', btns:[]},
+      {text:'Reformulação metodológica em 2025', status:'done', btns:[]},
+      {text:'Inclusão no PPA (entrega 20817)', status:'done', btns:[]},
+      {text:'Planejamento Estratégico (KR Estratégico 3.G)', status:'done', btns:[]},
+      {text:'PROMICO (R$5,83 milhões)', status:'done', btns:[]},
+      {text:'EAP elaborada e propostas recebidas: FIPE-R$5,850 milhões - fev/2025; FJP- R$ 902.417,31 - abr/2025;FDC-R$3,240 - abr/2025', status:'done', btns:[]}
+    ],
+    doing:[
+      {text:'Aguardando deliberação da alta gestão quanto à retomada da iniciativa. Ap', status:'todo', btns:[]},
+      {text:'Revisar o escopo do projeto;', status:'todo', btns:[]},
+      {text:'Atualizar cronograma e governança;', status:'todo', btns:[]},
+      {text:'Reavaliar as propostas técnicas das instituições parceiras.', status:'todo', btns:[]}
+    ],
+    todo:[
+      {text:'Iniciativa paralisada por decisão de alta gestão, em razão de avaliação de que não era o momento oportuno para sua implementação.', status:'blocked', btns:[]}
+    ],
+    indicators:[
+      {num:'6',label:'Marcos',color:'#00843D'},
+      {num:'4',label:'Próximos Passos',color:'#005DAA'},
+      {num:'1',label:'Pontos de Atenção - Riscos',color:'#606770'}
+    ]
   }
 ];
 
@@ -848,6 +882,7 @@ function renderOverview(){
       <div class="summary-strip">
         <div class="sum-card" style="--sc:#00843D"><div class="big-n">${projects.length}</div><div class="lbl">Projetos no Portfólio</div><div class="icon-bg"></div></div>
         <div class="sum-card" style="--sc:#00843D"><div class="big-n">${projects.filter(p=>p.status==='wip').length}</div><div class="lbl">Em Andamento</div><div class="icon-bg"></div></div>
+        <div class="sum-card" style="--sc:#C9A400"><div class="big-n">${projects.filter(p=>p.status==='paused').length}</div><div class="lbl">Paralisados</div><div class="icon-bg"></div></div>
         <div class="sum-card" style="--sc:#606770"><div class="big-n">${projects.filter(p=>p.status==='future').length}</div><div class="lbl">Planejados</div><div class="icon-bg"></div></div>
         <div class="sum-card" style="--sc:#005DAA"><div class="big-n">${projects.filter(p=>p.status==='done').length}</div><div class="lbl">Concluídos</div><div class="icon-bg"></div></div>
       </div>
@@ -1013,6 +1048,7 @@ function renderProject(id){
 function renderDashboard(){
   const total = projects.length;
   const wip = projects.filter(p=>p.status==='wip').length;
+  const paused = projects.filter(p=>p.status==='paused').length;
   const future = projects.filter(p=>p.status==='future').length;
   const done = projects.filter(p=>p.status==='done').length;
   const estruturante = projects.filter(p=>p.selo==='estruturante').length;
@@ -1020,14 +1056,17 @@ function renderDashboard(){
 
   const circ = 2 * Math.PI * 50; 
   const pctWip = total > 0 ? (wip / total) : 0;
+  const pctPaused = total > 0 ? (paused / total) : 0;
   const pctFuture = total > 0 ? (future / total) : 0;
   const pctDone = total > 0 ? (done / total) : 0;
 
   const dashWip = `${pctWip * circ} ${circ - (pctWip * circ)}`;
+  const dashPaused = `${pctPaused * circ} ${circ - (pctPaused * circ)}`;
+  const offsetPaused = -(pctWip * circ);
   const dashFuture = `${pctFuture * circ} ${circ - (pctFuture * circ)}`;
-  const offsetFuture = -(pctWip * circ);
+  const offsetFuture = -((pctWip + pctPaused) * circ);
   const dashDone = `${pctDone * circ} ${circ - (pctDone * circ)}`;
-  const offsetDone = -((pctWip + pctFuture) * circ);
+  const offsetDone = -((pctWip + pctPaused + pctFuture) * circ);
 
   const bars=projects.map(p=>{
     const c=p.status==='future'
@@ -1055,6 +1094,7 @@ function renderDashboard(){
       <div class="slide-grad-line"></div>
       <div class="dash-kpi-row">
         <div class="dash-kpi" style="--kc:#00843D"><div class="kn">${wip}</div><div class="kl">Em Execução</div></div>
+        <div class="dash-kpi" style="--kc:#C9A400"><div class="kn">${paused}</div><div class="kl">Paralisados</div></div>
         <div class="dash-kpi" style="--kc:#606770"><div class="kn">${future}</div><div class="kl">Planejados</div></div>
         <div class="dash-kpi" style="--kc:#005DAA"><div class="kn">${done}</div><div class="kl">Concluídos</div></div>
         <div class="dash-kpi" style="--kc:#C9A400"><div class="kn">${estruturante}</div><div class="kl">Proj. Estruturante</div></div>
@@ -1071,6 +1111,8 @@ function renderDashboard(){
               <circle cx="60" cy="60" r="50" fill="none" stroke="#F4F7F7" stroke-width="18"/>
               ${wip > 0 ? `<circle cx="60" cy="60" r="50" fill="none" stroke="#00843D" stroke-width="18"
                 stroke-dasharray="${dashWip}" stroke-dashoffset="0" stroke-linecap="round"/>` : ''}
+              ${paused > 0 ? `<circle cx="60" cy="60" r="50" fill="none" stroke="#C9A400" stroke-width="18"
+                stroke-dasharray="${dashPaused}" stroke-dashoffset="${offsetPaused}" stroke-linecap="round"/>` : ''}
               ${future > 0 ? `<circle cx="60" cy="60" r="50" fill="none" stroke="#606770" stroke-width="18"
                 stroke-dasharray="${dashFuture}" stroke-dashoffset="${offsetFuture}" stroke-linecap="round"/>` : ''}
               ${done > 0 ? `<circle cx="60" cy="60" r="50" fill="none" stroke="#005DAA" stroke-width="18"
@@ -1080,6 +1122,7 @@ function renderDashboard(){
             </svg>
             <div class="donut-legend">
               <div class="dl"><div class="dl-dot" style="background:#00843D"></div><div class="dl-name">Em Andamento</div><div class="dl-val">${wip} (${Math.round(pctWip*100)}%)</div></div>
+              <div class="dl"><div class="dl-dot" style="background:#C9A400"></div><div class="dl-name">Paralisados</div><div class="dl-val">${paused} (${Math.round(pctPaused*100)}%)</div></div>
               <div class="dl"><div class="dl-dot" style="background:#606770"></div><div class="dl-name">Planejados</div><div class="dl-val">${future} (${Math.round(pctFuture*100)}%)</div></div>
               <div class="dl"><div class="dl-dot" style="background:#005DAA"></div><div class="dl-name">Concluídos</div><div class="dl-val">${done} (${Math.round(pctDone*100)}%)</div></div>
               <div class="dl"><div class="dl-dot" style="background:#C9A400"></div><div class="dl-name">Estruturante</div><div class="dl-val">${estruturante}</div></div>
