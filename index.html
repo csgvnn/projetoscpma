@@ -505,19 +505,49 @@ const projects=[
     id:4,name:'Universo SIPLAM no B.O',
     color:'#DB2777',colorG:'#9D174D',colorL:'#FDF2F8',
     status:'wip',statusLabel:'Em Andamento',
-    progress:null,selo:'estruturante',prazo:'Julho',
+    progress:60,selo:'estruturante',prazo:'Setembro',
     equipe:'SMA',
-    atualizacao:'23/07/2026',
-    atualizacaoHora:'17:28',
+    atualizacao:'28/07/2026',
+    atualizacaoHora:'13:21',
     objective:'Integrar os dados do SIPLAM no Business Object para alinhamento em tempo real com a execução orçamentária.',
     obsEstrategica:null,
-    done:[],
-    doing:[],
-    todo:[],
+    done:[
+      {text:'Iniciação e Planejamento do Projeto - 12/02', status:'done'},
+      {text:'Levantamento de Requisitos e Escopo Técnico - 08/05', status:'done'},
+      {text:'Levantamento Funcional (Entendimento da Demanda - STI Central) - 25/06', status:'done'},
+      {text:'Modelagem Conceitual e Lógica (STI Central) - 14/07', status:'done'},
+      {text:'Modelagem Física (STI Central) - Prev. 29/07', status:'wip'},
+      {text:'Homologação da Modelagem (STI Central) - Prev. 31/07', status:'wip'},
+      {text:'Preparação dos Processos (STI Central) - 17/07', status:'done'},
+      {text:'Desenvolvimento das Cargas Dimensionais (STI Central) - Prev. 29/07', status:'wip'},
+      {text:'Desenvolvimento das Cargas Fatos (STI Central) - Prev. 31/07', status:'wip'},
+      {text:'Orquestração dos Processos (STI Central) - Prev. 31/07', status:'todo'},
+      {text:'Testes Técnicos (STI Central) - Prev. 03/08', status:'todo'},
+      {text:'Homologação SMA - Prev. 05/08', status:'todo'},
+      {text:'Deploy (STI Central) - Prev. 07/08', status:'todo'},
+      {text:'Documentação (STI Central) - Prev. 10/08', status:'todo'},
+      {text:'Encerramento do Projeto - Prev. 04/09', status:'todo'}
+    ],
+    doing:[
+      {text:'Criação do DDL das Tabelas - Prev. 29/07', status:'wip'},
+      {text:'Criação das tabelas dimensão - Prev. 29/07', status:'wip'},
+      {text:'Criação das tabelas fato - Prev. 29/07', status:'wip'},
+      {text:'Criação dos índices - Prev. 29/07', status:'wip'},
+      {text:'Criação das constraints - Prev. 29/07', status:'wip'},
+      {text:'Criação das views auxiliares - Prev. 29/07', status:'wip'},
+      {text:'Revisão Técnica da modelagem - Prev. 31/07', status:'wip'},
+      {text:'Desenvolvimento das Cargas Dimensionais (STI Central) - Prev. 29/07', status:'wip'},
+      {text:'Desenvolvimento das Cargas Fatos (STI Central) - Prev. 31/07', status:'wip'}
+    ],
+    todo:[
+      {text:'Atrasos por dependências externas (STI)', status:'blocked'},
+      {text:'Indisponibilidade de recursos humanos qualificados', status:'blocked'},
+      {text:'Alterações no escopo durante levantamentos', status:'blocked'}
+    ],
     indicators:[
-      {num:'0',label:'Marcos',color:'#00843D'},
-      {num:'0',label:'Próximos Passos',color:'#005DAA'},
-      {num:'0',label:'Riscos',color:'#606770'}
+      {num:'15',label:'Marcos',color:'#00843D'},
+      {num:'9',label:'Próximos Passos',color:'#005DAA'},
+      {num:'3',label:'Riscos',color:'#606770'}
     ]
   },
   {
