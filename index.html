@@ -429,18 +429,29 @@ const projects=[
     name:'Caderno de Valor Público',
     color:'#005DAA',colorG:'#003E73',colorL:'#E0ECF8',
     status:'wip',statusLabel:'Em Andamento',
-    progress:null,selo:null,prazo:'Junho',
+    progress:25,selo:null,prazo:'Junho',
     equipe:'GPMLP',
-    atualizacao:'23/07/2026',
-    atualizacaoHora:'14:53',
+    atualizacao:'28/07/2026',
+    atualizacaoHora:'13:57',
     objective:'Assessorar a qualificação e otimização dos gastos das entregas governamentais com boletins periódicos.',
-    done:[],
-    doing:[],
-    todo:[],
+    done:[
+      {text:'Identificação de iniciativas pilotos.', status:'done', btns:[]},
+      {text:'Estudo inicial com iniciativa 10024 (Atenção Especializada da Saúde)', status:'wip', btns:[]},
+      {text:'Estrutura conceitual do projeto.', status:'todo', btns:[]}
+    ],
+    doing:[
+      {text:'Finalizar o estudo da iniciativa piloto', status:'wip', btns:[]},
+      {text:'Estrutura do projeto', status:'todo', btns:[]}
+    ],
+    todo:[
+      {text:'Baixa disponibilidade de informações sobre benefícios gerados pelas políticas.', status:'blocked', btns:[]},
+      {text:'Dificuldade de mensuração do valor público produzido. (causalidade)', status:'blocked', btns:[]},
+      {text:'Pouca padronização das bases de dados.', status:'blocked', btns:[]}
+    ],
     indicators:[
-      {num:'0',label:'Marcos',color:'#00843D'},
-      {num:'0',label:'Próximos Passos',color:'#005DAA'},
-      {num:'0',label:'Pontos de Atenção - Riscos',color:'#606770'}
+      {num:'3',label:'Marcos',color:'#00843D'},
+      {num:'2',label:'Próximos Passos',color:'#005DAA'},
+      {num:'3',label:'Pontos de Atenção - Riscos',color:'#606770'}
     ]
   },
   {
