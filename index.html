@@ -758,16 +758,31 @@ const projects=[
     id:9,name:'Qualificação das entregas e do gasto público',
     color:'#0D9488',colorG:'#0F766E',colorL:'#F0FDFA',
     status:'wip',statusLabel:'Em Andamento',
-    progress:0,selo:null,prazo:'—',
+    progress:50,selo:null,prazo:'—',
     equipe:'SUPLAN',
     atualizacao:'28/07/2026',
-    atualizacaoHora:'15:13',
+    atualizacaoHora:'15:53',
     objective:'Qualificar as entregas governamentais e promover a eficiência do gasto público.',
     tabs:[
       {
         name:'Marcação Gerencial',
-        progress:0,prazo:'—',
-        done:[],doing:[],todo:[]
+        progress:50,prazo:'—',
+        done:[
+          {text:'Definição das tipologias das entregas.',status:'done',btns:[]},
+          {text:'Classificação inicial de todas as entregas do PPA.',status:'done',btns:[]},
+          {text:'Validação da classificação.',status:'wip',btns:[]},
+          {text:'Definição dos requisitos funcionais do BI. (Custeio)',status:'wip',btns:[]},
+          {text:'Desenvolvimento do protótipo do BI. (Custeio)',status:'wip',btns:[]}
+        ],
+        doing:[
+          {text:'Selecionar as entregas que existe uma correlação alta',status:'wip',btns:[]},
+          {text:'Construção de relatório de BI;',status:'todo',btns:[]},
+          {text:'Construção de cenários;',status:'todo',btns:[]}
+        ],
+        todo:[
+          {text:'Entregas muito amplas, pode abarcar mais de uma categoria.',status:'blocked',btns:[]},
+          {text:'Dificuldade de classificar gestão da iniciativa',status:'blocked',btns:[]}
+        ]
       },
       {
         name:'Marcadores Estratégicos',
@@ -775,11 +790,26 @@ const projects=[
         done:[],doing:[],todo:[]
       }
     ],
-    done:[],doing:[],todo:[],
+    done:[
+      {text:'Definição das tipologias das entregas.',status:'done',btns:[]},
+      {text:'Classificação inicial de todas as entregas do PPA.',status:'done',btns:[]},
+      {text:'Validação da classificação.',status:'wip',btns:[]},
+      {text:'Definição dos requisitos funcionais do BI. (Custeio)',status:'wip',btns:[]},
+      {text:'Desenvolvimento do protótipo do BI. (Custeio)',status:'wip',btns:[]}
+    ],
+    doing:[
+      {text:'Selecionar as entregas que existe uma correlação alta',status:'wip',btns:[]},
+      {text:'Construção de relatório de BI;',status:'todo',btns:[]},
+      {text:'Construção de cenários;',status:'todo',btns:[]}
+    ],
+    todo:[
+      {text:'Entregas muito amplas, pode abarcar mais de uma categoria.',status:'blocked',btns:[]},
+      {text:'Dificuldade de classificar gestão da iniciativa',status:'blocked',btns:[]}
+    ],
     indicators:[
-      {num:'0',label:'Marcos',color:'#00843D'},
-      {num:'0',label:'Próximos Passos',color:'#005DAA'},
-      {num:'0',label:'Pontos de Atenção - Riscos',color:'#606770'}
+      {num:'5',label:'Marcos',color:'#00843D'},
+      {num:'3',label:'Próximos Passos',color:'#005DAA'},
+      {num:'2',label:'Pontos de Atenção - Riscos',color:'#606770'}
     ]
   },
   {
