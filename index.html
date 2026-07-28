@@ -617,16 +617,31 @@ const projects=[
     id:6,name:'Desenvolvimento de sistemas',
     color:'#EA580C',colorG:'#9A3412',colorL:'#FFF7ED',
     status:'wip',statusLabel:'Em Andamento',
-    progress:null,selo:'inovacao',prazo:'—',
-    equipe:'GEPLAN',
+    progress:20,selo:'inovacao',prazo:'Dezembro/2027',
+    equipe:'SUPLAN',
     atualizacao:'28/07/2026',
-    atualizacaoHora:'15:13',
+    atualizacaoHora:'15:40',
     objective:'Desenvolver a plataforma integradora do planejamento estadual, substituindo o SIPLAM.',
     tabs:[
       {
         name:'Desenvolvimento de Sistemas',
-        progress:null,prazo:'—',
-        done:[],doing:[],todo:[]
+        progress:20,prazo:'Dezembro/2027',
+        done:[
+          {text:'Módulo IPE',status:'blocked',btns:[]},
+          {text:'Módulo de Planejamento',status:'wip',btns:[]},
+          {text:'Módulo de Monitoramento',status:'todo',btns:[]},
+          {text:'Módulo de Revisão',status:'todo',btns:[]},
+          {text:'Módulo de Planejamento Estratégico Institucional',status:'blocked',btns:[]},
+          {text:'Módulo de levantamentos transitórios',status:'todo',btns:[]}
+        ],
+        doing:[
+          {text:'Desenvolvimento do sistema (projeto já possui requisitos definidos e telas de protótipo)',status:'wip',btns:[]},
+          {text:'Planejamento do Módulo (Monitoramento)',status:'todo',btns:[]},
+          {text:'Planejamento do Módulo (Revisão)',status:'todo',btns:[]},
+          {text:'Revisão dos requisitos, revisão da integração; desenvolvimento do módulo no sistema RUMO.',status:'todo',btns:[]},
+          {text:'Planejamento do Módulo (Levantamentos transitórios)',status:'todo',btns:[]}
+        ],
+        todo:[]
       },
       {
         name:'Módulo IPÉ',
@@ -639,10 +654,25 @@ const projects=[
         done:[],doing:[],todo:[]
       }
     ],
-    done:[],doing:[],todo:[],
+    done:[
+      {text:'Módulo IPE',status:'blocked',btns:[]},
+      {text:'Módulo de Planejamento',status:'wip',btns:[]},
+      {text:'Módulo de Monitoramento',status:'todo',btns:[]},
+      {text:'Módulo de Revisão',status:'todo',btns:[]},
+      {text:'Módulo de Planejamento Estratégico Institucional',status:'blocked',btns:[]},
+      {text:'Módulo de levantamentos transitórios',status:'todo',btns:[]}
+    ],
+    doing:[
+      {text:'Desenvolvimento do sistema (projeto já possui requisitos definidos e telas de protótipo)',status:'wip',btns:[]},
+      {text:'Planejamento do Módulo (Monitoramento)',status:'todo',btns:[]},
+      {text:'Planejamento do Módulo (Revisão)',status:'todo',btns:[]},
+      {text:'Revisão dos requisitos, revisão da integração; desenvolvimento do módulo no sistema RUMO.',status:'todo',btns:[]},
+      {text:'Planejamento do Módulo (Levantamentos transitórios)',status:'todo',btns:[]}
+    ],
+    todo:[],
     indicators:[
-      {num:'0',label:'Marcos',color:'#00843D'},
-      {num:'0',label:'Próximos Passos',color:'#005DAA'},
+      {num:'6',label:'Marcos',color:'#00843D'},
+      {num:'5',label:'Próximos Passos',color:'#005DAA'},
       {num:'0',label:'Pontos de Atenção - Riscos',color:'#606770'}
     ]
   },
