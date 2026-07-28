@@ -620,7 +620,7 @@ const projects=[
     progress:20,selo:'inovacao',prazo:'Dezembro/2027',
     equipe:'SUPLAN',
     atualizacao:'28/07/2026',
-    atualizacaoHora:'15:40',
+    atualizacaoHora:'15:43',
     objective:'Desenvolver a plataforma integradora do planejamento estadual, substituindo o SIPLAM.',
     tabs:[
       {
@@ -645,8 +645,22 @@ const projects=[
       },
       {
         name:'Módulo IPÉ',
-        progress:null,prazo:'—',
-        done:[],doing:[],todo:[]
+        progress:30,prazo:'—',
+        done:[
+          {text:'Elaboração da solução',status:'done',btns:[]},
+          {text:'Definição de requisitos e casos de uso',status:'done',btns:[]},
+          {text:'Definição de protótipos e caminho feliz',status:'done',btns:[]},
+          {text:'Desenvolvimento do sistema',status:'blocked',btns:[]},
+          {text:'Homologação',status:'todo',btns:[]},
+          {text:'Integrações com o IPOF/SIAFIC',status:'todo',btns:[]},
+          {text:'Implantação',status:'todo',btns:[]}
+        ],
+        doing:[
+          {text:'Definição da equipe que irá fazer o desenvolvimento do sistema',status:'blocked',btns:[]}
+        ],
+        todo:[
+          {text:'Indisponibilidade de equipe de desenvolvimento (TI)',status:'blocked',btns:[]}
+        ]
       },
       {
         name:'Módulo Planejamento',
