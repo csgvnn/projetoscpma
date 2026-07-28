@@ -198,6 +198,7 @@ body.sidebar-hidden .main{margin-left:0!important;}
 .filter-pill .dot.late{background:#E4002B;}
 .filter-pill .dot.blocked{background:#EA580C;}
 .filter-pill .dot.todo{background:#606770;}
+.filter-pill .dot.paused{background:#C9A400;}
 .filter-pill .dot.cancelled{background:#080808;}
 .cronograma-list{display:flex;flex-direction:column;gap:6px;margin-top:10px;}
 .crono-item{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--deep);font-weight:500;}
@@ -488,7 +489,7 @@ const projects=[
       {text:'BI Radar de Desempenho do Planejamento Governamental (RDPG) - L 11/08', status:'todo', btns:[]}
     ],
     doing:[
-      {text:'BI Planejamento Gov. - Implementação das alterações - Proj. 21/08', status:'todo', btns:[]},
+      {text:'BI Planejamento Gov. - Implementação das alterações - Proj. 21/08', status:'paused', btns:[]},
       {text:'Desenho Informações Financeiras - Proj. 07/08', status:'todo', btns:[]},
       {text:'Desenho Informações de Monitoramento - Proj. 07/08', status:'todo', btns:[]},
       {text:'Homologação das alterações - Proj. 25/08', status:'todo', btns:[]},
@@ -852,6 +853,7 @@ function renderProject(id){
         done:      ['#005DAA','#E0ECF8','✓'],
         late:      ['#E4002B','#FDF2F4','!'],
         blocked:   ['#EA580C','#FFF5ED','?'],
+        paused:    ['#C9A400','#FFF8D6','⏸'],
         cancelled: ['#080808','#F5F5F5','✕'],
         todo:      ['#606770','#F4F7F7','◦']
       };
@@ -951,6 +953,7 @@ function renderProject(id){
           <button class="filter-pill" onclick="toggleProjectFilter(this, 'done')"><span class="dot done"></span>Concluído</button>
           <button class="filter-pill" onclick="toggleProjectFilter(this, 'late')"><span class="dot late"></span>Atrasado</button>
           <button class="filter-pill" onclick="toggleProjectFilter(this, 'blocked')"><span class="dot blocked"></span>Entrave</button>
+          <button class="filter-pill" onclick="toggleProjectFilter(this, 'paused')"><span class="dot paused"></span>Paralisado</button>
           <button class="filter-pill" onclick="toggleProjectFilter(this, 'todo')"><span class="dot todo"></span>Não iniciado</button>
           <button class="filter-pill" onclick="toggleProjectFilter(this, 'cancelled')"><span class="dot cancelled"></span>Cancelado</button>
         </div>
