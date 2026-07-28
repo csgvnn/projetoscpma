@@ -1055,6 +1055,19 @@ function renderProject(id){
   const progressVal = activeTab ? activeTab.progress : p.progress;
   const prazoVal = activeTab ? activeTab.prazo : p.prazo;
 
+  let tabsHtml = '';
+  if (p.tabs && p.tabs.length > 0) {
+    tabsHtml = `
+      <div class="proj-tabs-container">
+        ${p.tabs.map((t, idx) => `
+          <button class="proj-tab-btn ${idx === 0 ? 'active' : ''}" data-proj-id="${p.id}" data-tab-idx="${idx}" onclick="switchProjTab(${p.id}, ${idx})" style="--pc:${p.color}">
+            ${t.name}
+          </button>
+        `).join('')}
+      </div>
+    `;
+  }
+
   function colItems(items,defaultColor,defaultBg,defaultMarker,customEmpty,colStatus){
     return colItemsForTab(items,defaultColor,defaultBg,defaultMarker,customEmpty,colStatus);
   }
