@@ -707,12 +707,12 @@ const projects=[
     objective:'Qualificar as entregas governamentais e promover a eficiência do gasto público.',
     tabs:[
       {
-        name:'Qualificação das Entregas',
+        name:'Marcação Gerencial',
         progress:0,prazo:'—',
         done:[],doing:[],todo:[]
       },
       {
-        name:'Qualificação do Gasto Público',
+        name:'Marcadores Estratégicos',
         progress:0,prazo:'—',
         done:[],doing:[],todo:[]
       }
@@ -1130,6 +1130,7 @@ function renderProject(id){
       </div>
     </div>
     <div class="proj-body">
+      ${tabsHtml}
       <div class="meta-bar" style="grid-template-columns: repeat(${colsCount}, 1fr);">
         ${p.id === 2 ? `<div class="meta-item" ${paddingStyle}><div class="meta-key">Ciclo</div><div class="meta-val" ${valFontSizeStyle}>5°</div></div>` : ''}
         <div class="meta-item" ${paddingStyle}><div class="meta-key">Status</div><div class="meta-val" style="font-size:14px;color:${p.color}">${p.statusLabel}</div></div>
@@ -1144,7 +1145,6 @@ function renderProject(id){
 
       <div>
         <div class="section-label">Etapas do Projeto</div>
-        ${tabsHtml}
         <div class="project-filters">
           <button class="filter-pill" onclick="toggleProjectFilter(this, 'wip')"><span class="dot wip"></span>No prazo</button>
           <button class="filter-pill" onclick="toggleProjectFilter(this, 'done')"><span class="dot done"></span>Concluído</button>
