@@ -121,6 +121,7 @@ body.sidebar-hidden .main{margin-left:0!important;}
 .proj-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,0.06);border-color:var(--pc);}
 .proj-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px;}
 .proj-card-num{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:900;color:var(--muted);background:var(--soft);padding:3px 9px;border-radius:99px;text-transform:uppercase;letter-spacing:0.04em;}
+.proj-card-team{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:900;color:#3730A3;background:#EEF2FF;padding:3px 9px;border-radius:99px;text-transform:uppercase;letter-spacing:0.04em;}
 .proj-card-status{display:flex;flex-direction:column;align-items:flex-end;gap:4px;}
 .proj-card-name{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:900;color:var(--deep);line-height:1.2;margin-bottom:6px;letter-spacing:0.01em;}
 .proj-card-obj{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:16px;flex:1;}
@@ -1004,7 +1005,10 @@ function renderOverview(){
   const cards=projects.map(p=>`
     <div class="proj-card" onclick="openProject(${p.id})" style="--pc:${p.color}">
       <div class="proj-card-top">
-        <span class="proj-card-num">Projeto ${String(p.id+1).padStart(2,'0')}</span>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <span class="proj-card-num">Projeto ${String(p.id+1).padStart(2,'0')}</span>
+          <span class="proj-card-team">${p.equipe}</span>
+        </div>
         <div class="proj-card-status">
           ${statusBadge(p)}
           ${p.selo?`<div>${seloHtmlCard(p.selo)}</div>`:''}
